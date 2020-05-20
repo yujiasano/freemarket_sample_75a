@@ -83,6 +83,3 @@
 - has_many :items
 
 
-
-
-
