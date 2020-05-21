@@ -105,6 +105,3 @@ revertのためというのはどういう意味でしょうか？
 
 ### Association
 - has_many :items
-
-
-
