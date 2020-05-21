@@ -1,85 +1,28 @@
-# freemarket_sample_75a
-## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|nickname|string|null: false, index: true|
-|email|string|null: false|
-|password|string|null: false|
+# README
 
-### Association
-- has_many :items
-- has_one :profile
-- has_one :creditcard
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-## profilesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|family_name|string|null: false|
-|first_name|string|null: false|
-|family_name_kana|string|null: false|
-|first_name_kana|string|null: false|
-|postal_code|integer|null: false|
-|prefecture|string|null: false|
-|municipalities|string|null: false|
-|address|string|null: false|
-|introduction|text|null: false|
-|icon|string|null: false|
-|phone_number|integer|null: false|
-|birth_year|integer|null: false|
-|biirth_month|integer|null: false|
-|birth_day|integer|null: false|
-|user|references|null: false|
+Things you may want to cover:
 
-### Association
-- belongs_to :user
+* Ruby version
 
-## creditcardテーブル
-|Column|Type|Options|
-|------|----|-------|
-|card_id|integer|null: false|
-|customer_id|integer|null: false|
-|user|references|null: false, foreign_key: true|
+* System dependencies
 
-### Association
-- belongs_to :user
+* Configuration
 
-## itemsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, index: true|
-|image|string|null: false|
-|description|text|null: false|
-|price|integer|null: false|
-|status|string|null: false|
-|size|string||
-|trading_status|string|null: false|
-|trading_status|string|null: false|
-|delivery_area|string|null: false|
-|delivery_days|string|null: false|
-|delivery_burden|string|null: false|
-|user|references|null: false, foreign_key: true|
-|brand|references|null: false, foreign_key: true|
-|category|references|null: false, foreign_key: true|
+* Database creation
 
-### Association
-- belongs_to :user
-- belongs_to :categoty
-- belongs_to :brand
+* Database initialization
 
-## categoryテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, index: true|
+* How to run the test suite
 
-### Association
-- has_many :items
+* Services (job queues, cache servers, search engines, etc.)
 
-## brandテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, index: true|
+* Deployment instructions
 
-### Association
-- has_many :items
+* ...
+
+
 
 
