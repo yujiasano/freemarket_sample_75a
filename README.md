@@ -18,10 +18,6 @@
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|postal_code|integer|null: false|
-|prefecture|string|null: false|
-|municipalities|string|null: false|
-|address|string|null: false|
 |introduction|text|null: false|
 |icon|string|null: false|
 |phone_number|integer|null: false|
@@ -29,6 +25,18 @@
 |biirth_month|integer|null: false|
 |birth_day|integer|null: false|
 |user|references|null: false|
+
+### Association
+- belongs_to :user
+
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|postal_code|integer|null: false|
+|prefecture|string|null: false|
+|municipalities|string|null: false|
+|address|string|null: false|
+|user|references|null: false
 
 ### Association
 - belongs_to :user
@@ -47,7 +55,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index: true|
-|image|string|null: false|
 |description|text|null: false|
 |price|integer|null: false|
 |status|string|null: false|
@@ -65,6 +72,16 @@
 - belongs_to :user
 - belongs_to :categoty
 - belongs_to :brand
+
+
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false|
+|item|references|null: false|
+
+### Association
+- belongs_to :item
 
 ## categoryテーブル
 |Column|Type|Options|
