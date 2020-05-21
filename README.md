@@ -1,28 +1,99 @@
-# README
+# freemarket_sample_75a
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false, index: true|
+|email|string|null: false|
+|password|string|null: false|
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Association
+- has_many :items
+- has_one :profile
+- has_one :creditcard
 
-Things you may want to cover:
+## profilesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|introduction|text|null: false|
+|icon|string|null: false|
+|phone_number|integer|null: false|
+|birth_year|integer|null: false|
+|biirth_month|integer|null: false|
+|birth_day|integer|null: false|
+|user|references|null: false|
 
-* Ruby version
+### Association
+- belongs_to :user
 
-* System dependencies
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|postal_code|integer|null: false|
+|prefecture|string|null: false|
+|municipalities|string|null: false|
+|address|string|null: false|
+|user|references|null: false
 
-* Configuration
+### Association
+- belongs_to :user
 
-* Database creation
+## creditcardテーブル
+|Column|Type|Options|
+|------|----|-------|
+|card_id|integer|null: false|
+|customer_id|integer|null: false|
+|user|references|null: false, foreign_key: true|
 
-* Database initialization
+### Association
+- belongs_to :user
 
-* How to run the test suite
+## itemsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: true|
+|description|text|null: false|
+|price|integer|null: false|
+|status|string|null: false|
+|size|string||
+|trading_status|string|null: false|
+|delivery_area|string|null: false|
+|delivery_days|string|null: false|
+|delivery_burden|string|null: false|
+|user|references|null: false, foreign_key: true|
+|brand|references|null: false, foreign_key: true|
+|category|references|null: false, foreign_key: true|
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+### Association
+- belongs_to :user
+- belongs_to :categoty
+- belongs_to :brand
 
 
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false|
+|item|references|null: false|
 
+### Association
+- belongs_to :item
+
+## categoryテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: true|
+
+### Association
+- has_many :items
+
+## brandテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: true|
+
+### Association
+- has_many :items
