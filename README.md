@@ -2,30 +2,6 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, index: true, unique: true|
-|email|string|null: false|
-|password|string|null: false|
-
-### Association
-- has_many :items
-- has_one :profile
-- has_one :creditcard
-
-## profilesテーブル
-|Column|Type|Options|
-|------|----|-------|
-
-
-> revertのためのコードならlgtmです
-
-間違えてmargeをしていましたのではじめてのプルリク、レビュー待ちになります。
-revertのためというのはどういう意味でしょうか？
-
-
-# freemarket_sample_75a
-## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
 |nickname|string|null: false, index: true|
 |email|string|null: false|
 |password|string|null: false|
