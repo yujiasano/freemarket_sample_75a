@@ -2,30 +2,6 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, index: true, unique: true|
-|email|string|null: false|
-|password|string|null: false|
-
-### Association
-- has_many :items
-- has_one :profile
-- has_one :creditcard
-
-## profilesテーブル
-|Column|Type|Options|
-|------|----|-------|
-
-
-> revertのためのコードならlgtmです
-
-間違えてmargeをしていましたのではじめてのプルリク、レビュー待ちになります。
-revertのためというのはどういう意味でしょうか？
-
-
-# freemarket_sample_75a
-## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
 |nickname|string|null: false, index: true|
 |email|string|null: false|
 |password|string|null: false|
@@ -42,10 +18,6 @@ revertのためというのはどういう意味でしょうか？
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|postal_code|integer|null: false|
-|prefecture|string|null: false|
-|municipalities|string|null: false|
-|address|string|null: false|
 |introduction|text|null: false|
 |icon|string|null: false|
 |phone_number|integer|null: false|
@@ -53,6 +25,18 @@ revertのためというのはどういう意味でしょうか？
 |biirth_month|integer|null: false|
 |birth_day|integer|null: false|
 |user|references|null: false|
+
+### Association
+- belongs_to :user
+
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|postal_code|integer|null: false|
+|prefecture|string|null: false|
+|municipalities|string|null: false|
+|address|string|null: false|
+|user|references|null: false
 
 ### Association
 - belongs_to :user
@@ -71,12 +55,10 @@ revertのためというのはどういう意味でしょうか？
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index: true|
-|image|string|null: false|
 |description|text|null: false|
 |price|integer|null: false|
 |status|string|null: false|
 |size|string||
-|trading_status|string|null: false|
 |trading_status|string|null: false|
 |delivery_area|string|null: false|
 |delivery_days|string|null: false|
@@ -89,6 +71,16 @@ revertのためというのはどういう意味でしょうか？
 - belongs_to :user
 - belongs_to :categoty
 - belongs_to :brand
+
+
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false|
+|item|references|null: false|
+
+### Association
+- belongs_to :item
 
 ## categoryテーブル
 |Column|Type|Options|
