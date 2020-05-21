@@ -60,7 +60,6 @@
 |status|string|null: false|
 |size|string||
 |trading_status|string|null: false|
-|trading_status|string|null: false|
 |delivery_area|string|null: false|
 |delivery_days|string|null: false|
 |delivery_burden|string|null: false|
