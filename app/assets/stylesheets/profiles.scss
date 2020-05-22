@@ -1,3 +1,32 @@
 // Place all the styles related to the profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+* {
+  box-sizing: border-box;
+}
+
+.default-container{
+  background-color: green;
+ }
+
+  .header{
+    background-color: blue;
+
+  }
+ 
+
+  .bread-crumbs{
+    background-color: tomato ;
+
+  }
+
+
+
+  .main-container{
+  background-color: gray;
+  }
+
+
+  
