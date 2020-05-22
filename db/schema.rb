@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_21_110628) do
+ActiveRecord::Schema.define(version: 2020_05_22_012838) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -28,6 +28,23 @@ ActiveRecord::Schema.define(version: 2020_05_21_110628) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "family_name", null: false
+    t.string "first_name", null: false
+    t.string "family_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.text "introduction"
+    t.string "icon"
+    t.integer "phone_number", null: false
+    t.integer "birth_year", null: false
+    t.integer "birth_month", null: false
+    t.integer "birth_day", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -41,4 +58,5 @@ ActiveRecord::Schema.define(version: 2020_05_21_110628) do
   end
 
   add_foreign_key "items", "users"
+  add_foreign_key "profiles", "users"
 end
