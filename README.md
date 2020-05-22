@@ -18,8 +18,8 @@
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|introduction|text|null: false|
-|icon|string|null: false|
+|introduction|text||
+|icon|string||
 |phone_number|integer|null: false|
 |birth_year|integer|null: false|
 |biirth_month|integer|null: false|
