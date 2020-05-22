@@ -1,0 +1,243 @@
+.header
+  .header__contents
+    .header__contents__content
+      %h1.header__contents__content__logo
+        =link_to "#" do
+          = image_tag "logo.png", alt: "ロゴ"
+      .header__contents__content__search-box
+        %form
+          %input.header__contents__content__search-box__input{name: "", placeholder: "キーワードから探す", type:"", value: ""}/
+          %button{type: "submit"}
+            .header__contents__content__search-box__icon
+              = image_tag "icon-search 1.png", alt: "ロゴ"
+    .header__contents__nav-list
+      .header__contents__nav-list__left
+        %ul
+          .header__contents__nav-list__left__category
+            %li
+              =link_to "#" do
+                カテゴリー
+          .header__contents__nav-list__left__brand
+            %li
+              =link_to "#" do
+                ブランド
+      .header__contents__nav-list__right
+        %ul
+          .header__contents__nav-list__right__login
+            %li
+              =link_to "#" do
+                ログイン
+          .header__contents__nav-list__right__new
+            %li
+              =link_to "#" do
+                新規登録
+.nav
+  %nav
+    .nav__ul
+      %ul
+        .nav__ul__li
+          %li
+            .nav__ul__li__link
+              =link_to "#" do
+                FURIMA
+        .nav__ul__li
+          %li
+            .nav__ul__li__link
+              =link_to "#" do
+                = icon('fas', 'angle-right', class: 'icon')
+        .nav__ul__li
+          %li
+            .nav__ul__li__link
+              =link_to "#" do
+                メンズ
+        .nav__ul__li
+          %li
+            .nav__ul__li__link
+              =link_to "#" do
+                = icon('fas', 'angle-right', class: 'icon')
+        .nav__ul__li
+          %li
+            .nav__ul__li__link
+              =link_to "#" do
+                ジャケット/アウター
+        .nav__ul__li
+          %li
+            .nav__ul__li__link
+              =link_to "#" do
+                = icon('fas', 'angle-right', class: 'icon')
+        .nav__ul__li
+          %li
+            .nav__ul__li__link
+              =link_to "#" do
+                ノーカラージャケット
+        .nav__ul__li
+          %li
+            .nav__ul__li__link
+              =link_to "#" do
+                = icon('fas', 'angle-right', class: 'icon')
+        .nav__ul__li
+          %li
+            .nav__ul__li__link
+              =link_to "#" do
+                product2
+        
+              
+.contents
+  .contents__main
+    .contents__main__box
+      .contents__main__box__item
+        .contents__main__box__item__name
+          %h2 product2
+          .contents__main__box__item__image
+            %ul
+              %li
+                = image_tag "products1.png", alt: "ロゴ"
+                .contents__main__box__item__image__ul
+                  %ul
+                    %li
+                      = image_tag "product2.png", alt: "ロゴ"
+                    %li
+                      = image_tag "product3.png", alt: "ロゴ"
+                    %li
+                      = image_tag "product4.png", alt: "ロゴ"
+          .contents__main__box__item__price
+            %span
+              ¥20000
+            .contents__main__box__item__price__other
+              %span
+                (税込)
+              %span
+                送料込み
+          .contents__main__box__item__detail
+            親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+          .contents__main__box__item__table
+            %table
+              %tbody
+                %tr
+                  %th 出品者
+                  %td hoge
+                %tr
+                  %th カテゴリー
+                  %td 
+                    =link_to "#" do
+                      メンズ
+                    %br
+                    =link_to "#" do
+                      ジャケット/アウター
+                    %br
+                    =link_to "#" do
+                      ノーカラージャケット
+                %tr
+                  %th ブランド
+                  %td 
+                %tr
+                  %th 商品状態
+                  %td 新品/未使用
+                %tr
+                  %th 配送料の負担
+                  %td 着払い（購入者負担）
+                %tr
+                  %th 発送元の地域
+                  %td 
+                    =link_to "#" do
+                      岐阜県
+                %tr
+                  %th 発送日の目安
+                  %td 1-2日で発送
+          .contents__main__box__item__otherbtn
+            %ul
+              %li.contents__main__box__item__otherbtn__fav
+                = icon('fas', 'star', class: 'icon')
+                お気に入り 20
+            %ul
+              %li
+                =link_to "#" do
+                  = icon('fas', 'flag', class: 'icon')
+                  不適切な商品通報
+      .contents__main__box__comment
+        %ul
+        %from
+          %textarea
+          %p
+            相手のことを考え丁寧なコメントを心がけましょう。
+            %br
+            不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %button{type: "submit"}
+            = icon('fas', 'comment', class: 'icon')
+            コメントする
+      .contents__main__box__bottom
+        %ul
+          %li
+            =link_to "#" do
+              = icon('fas', 'angle-left', class: 'icon')
+              %span
+                前の商品
+          %li
+            =link_to "#" do
+              = icon('fas', 'angle-right', class: 'icon')
+              %span
+                後ろの商品
+      .contents__main__box__more
+        =link_to "#" do
+          メンズをもっとみる
+%aside.footer-banner
+  .footer-banner__inner
+    %h2
+      だれでもかんたん、人生を変えるフリマアプリ
+    %p
+      今すぐ無料ダウンロード！
+    .footer-banner__inner__link
+      =link_to "#" do
+        = image_tag "appstore.svg", alt: "ロゴ"
+      =link_to "#" do
+        = image_tag "googleplay.svg", alt: "ロゴ"
+.footer
+  %ul.footer__toc
+    %li.footer__toc__content
+      %h2
+        FURIMAについて
+      %ul
+        %li
+          =link_to "#" do
+            会社概要（運営会社）
+        %li
+          =link_to "#" do
+            プライバシーポリシー
+        %li
+          =link_to "#" do
+            FURIMA利用規約
+        %li
+          =link_to "#" do
+            ポイントに関する特約
+    %li.footer__toc__content
+      %h2
+        FURIMAを見る
+      %ul
+        %li
+          =link_to "#" do
+            カテゴリー一覧
+        %li
+          =link_to "#" do
+            ブランド一覧
+    %li.footer__toc__content
+      %h2
+        ヘルプ＆ガイド
+      %ul
+        %li
+          =link_to "#" do
+            FURIMAガイド
+        %li
+          =link_to "#" do
+            FURIMAロゴ利用ガイドライン
+        %li
+          =link_to "#" do
+            お知らせ
+  .footer__logo
+    =link_to "#" do
+      = image_tag "logo-white.png", alt: "ロゴ"
+  %p
+    © FURIMA
+=link_to "#" do
+  .listing-btn
+    %span 出品する
+    = image_tag "listing.svg", alt: "ロゴ"
