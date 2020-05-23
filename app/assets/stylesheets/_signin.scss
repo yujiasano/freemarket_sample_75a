@@ -1,0 +1,308 @@
+// 新規登録ページ（registrations/new.html.haml）
+
+* {
+  box-sizing: border-box;
+}
+body {
+  display: block;
+  margin: 8px;
+  
+}
+a{
+  text-decoration: none;
+  color: #333;
+}
+
+// ヘッダー
+.signin-header{
+  padding: 0 60px;
+  &__contents{
+    max-width: 1040px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    &__content{
+      position: relative;
+      display: flex;
+      align-items: center;
+      &__logo a{
+        width: 140px;
+        display: block;
+      }
+      &__logo img{
+        width: 100%;
+        vertical-align: bottom;
+      }
+      .signin-header__progress {
+        width: 580px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        // padding: 40px 0 0 40px;
+        ol {
+          display: flex;
+          .singin-header__progress__text--active {
+            font-weight: 600;
+            color: #ea352d;
+            margin-right: 40px;
+            position: relative;
+            z-index: 1;
+            min-width: 40px;
+            font-size: 12px;
+            text-align: center;
+            .signin-header__progress__round--red {
+              background-color: #ea352d;
+              width: 12px;
+              height: 12px;
+              margin: 8px auto 0;
+              border-radius: 50%;
+            }
+          }
+          .signin-header__progress__round--red::before{
+            // right: 50%;
+            position: absolute;
+            bottom: 5px;
+            z-index: -1;
+            display: block;
+            content: "";
+            width: 100%;
+            height: 2px;
+            // background-color: #f5f5f5;
+            background: #ccc;
+          }
+          .signin-header__progress__round--red::after {
+            // right: 50%;
+            position: absolute;
+            bottom: 5px;
+            z-index: -1;
+            display: block;
+            content: "";
+            width: 90%;
+            height: 2px;
+            background-color: #ea352d;
+          }
+          .signin-header__progress__text {
+            margin-right: 40px;
+            position: relative;
+            z-index: 1;
+            min-width: 40px;
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+            .signin-header__progress__round {
+              width: 12px;
+              height: 12px;
+              margin: 8px auto 0;
+              background: #ccc;
+              border-radius: 50%;
+            }
+            .signin-header__progress__round::before {
+              right: 30px;
+              position: absolute;
+              bottom: 5px;
+              z-index: -1;
+              display: block;
+              content: "";
+              width: 100%;
+              height: 2px;
+              background: #ccc;
+            }
+            .signin-header__progress__round::after {
+              left: 50%;
+              position: absolute;
+              bottom: 5px;
+              z-index: -1;
+              display: block;
+              content: "";
+              width: 100%;
+              height: 2px;
+              background: #ccc;
+            }
+          }
+          .signin-header__progress__text--end {
+            margin-right: 40px;
+            position: relative;
+            z-index: 1;
+            min-width: 40px;
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+            .signin-header__progress__round {
+              width: 12px;
+              height: 12px;
+              margin: 8px auto 0;
+              background: #ccc;
+              border-radius: 50%;
+            }
+          }
+          .signin-header__progress__text--end::before {
+            right: 20px;
+            position: absolute;
+            bottom: 5px;
+            z-index: -1;
+            display: block;
+            content: "";
+            width: 100%;
+            height: 2px;
+            background: #ccc;
+          }
+          // ここから住所入力のページでの変更点
+          .signin-header__progress__text--main {
+            font-weight: 600;
+            color: #ea352d;
+            margin-right: 40px;
+            position: relative;
+            z-index: 1;
+            min-width: 40px;
+            font-size: 12px;
+            text-align: center;
+            .signin-header__progress__round--main {
+              width: 12px;
+              height: 12px;
+              margin: 8px auto 0;
+              background: #ea352d;
+              border-radius: 50%;
+            }
+          }
+          .signin-header__progress__round--main::before {
+            right: 30px;
+            position: absolute;
+            bottom: 5px;
+            z-index: -1;
+            display: block;
+            content: "";
+            width: 100%;
+            height: 2px;
+            background: #ea352d;
+          }
+          .signin-header__progress__round--main::after {
+            left: 50%;
+            position: absolute;
+            bottom: 5px;
+            z-index: -1;
+            display: block;
+            content: "";
+            width: 100%;
+            height: 2px;
+            background: #ea352d;
+          }
+        }
+      }
+    }
+  }
+}
+
+// コンテンツ
+.signin_form {
+  max-width: 340px;
+  margin: 0 auto;
+  margin-top: 60px;
+  &__title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  &__info {
+    margin-top: 8px;
+    color: rgb(105, 104, 104);
+    line-height: 1.5;
+  }
+
+  &__group {
+    margin-top: 32px;
+    label {
+      font-weight: 600;
+      display: inline-block;
+      // touch-action: manipulation;
+    }
+    &__require {
+      background-color: #ea352d;
+      margin-left: 8px;
+      padding: 2px 4px;
+      border-radius: 2px;
+      color: #fff;
+      font-size: 12px;
+      display: inline-block;
+    }
+    &__optional {
+      background-color: #b4b2b2;
+      margin-left: 8px;
+      padding: 2px 4px;
+      border-radius: 2px;
+      color: #fff;
+      font-size: 12px;
+      display: inline-block;
+    }
+    &__input {
+      width: 100%;
+      margin: 8px 0 0;
+      height: 48px;
+      padding: 10px 16px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: #fff;
+      line-height: 1.5;
+      font-size: 16px;
+      box-sizing: border-box;
+      &--half{
+        width: calc(50% - 6px);
+        margin: 8px 0 0;
+        height: 48px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+    }
+    .birthday-select-wrap {
+      #birthday_birthday_1i {
+        width: 76px;
+        height: 48px;
+        font-size: 100%;
+        margin-top: 10px;
+
+      }
+      #birthday_birthday_2i {
+        width: 76px;
+        height: 48px;
+        font-size: 100%;
+        margin-top: 10px;
+
+      }
+      #birthday_birthday_3i {
+        width: 76px;
+        height: 48px;
+        font-size: 100%;
+        margin-top: 10px;
+
+      }
+    }
+    &__info {
+      margin-top: 8px;
+      color: #888;
+      line-height: 1.5;
+    }
+    &__text-center{
+      margin-top: 8px;
+      line-height: 1.5;
+      color: #333;
+      font-size: 14px;
+      text-align: center;
+    }
+    .btn-default {
+      margin-top: 24px;
+      margin-bottom: 50px;
+      background: #3CCACE;
+      // border: px solid rgba(118, 215, 218, 0.753);
+      color: #fff;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  }
+}

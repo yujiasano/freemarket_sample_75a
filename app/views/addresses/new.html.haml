@@ -1,0 +1,49 @@
+.signin-header
+  .signin-header__contents
+    .signin-header__contents__content
+      %h1.signin-header__contents__content__logo
+        =link_to "#" do
+          = image_tag "logo.png", alt: "ロゴ"
+      %nav.signin-header__progress
+        %ol
+          %li.singin-header__progress__text--active{ id: "first" }
+            会員情報
+            .signin-header__progress__round--red
+          %li.signin-header__progress__text--main
+            お届け先住所入力
+            .signin-header__progress__round--main   
+          %li.signin-header__progress__text
+            プロフィール
+            .signin-header__progress__round    
+          %li.signin-header__progress__text--end{ id: "end" }
+            完了
+            .signin-header__progress__round
+
+.signin_form
+  .signin_form__title
+    お届け先住所入力
+  
+  = form_with url:"#" do |f|
+    -# =render "devise/shared/error_messages", resource: @address
+    .signin_form__group
+      = f.label :郵便番号
+      .signin_form__group__require 必須
+      = f.text_field :postal_code,{autofocus: true, placeholder: "例）123-4567", class: 'signin_form__group__input'}
+    .signin_form__group
+      = f.label :都道府県
+      .signin_form__group__require 必須
+      = f.select :prefecture, Address.prefectures.keys, {}, {autofocus: true, placeholder: "例）123-4567", class: 'signin_form__group__input'}
+    .signin_form__group
+      = f.label :市町村
+      .signin_form__group__require 必須
+      = f.text_field :city, autofocus: true, placeholder: "例）札幌市", class: 'signin_form__group__input'
+    .signin_form__group
+      = f.label :番地
+      .signin_form__group__require 必須
+      = f.text_field :address, autofocus: true, placeholder: "例）青葉1-1-1", class: 'signin_form__group__input'
+    .signin_form__group
+      = f.label :建物名
+      %span.signin_form__group__optional 任意
+      = f.text_field :apartment, autofocus: true, placeholder: "例）柳ビル103", class: 'signin_form__group__input'
+    .signin_form__group
+      = f.submit '次へ', class: "btn-default", url: "new_profile_path"
