@@ -7,13 +7,13 @@ body {
   font-size: 14px;
 }
 
-.wrapper{
+.wrapper-sale{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.content{
+.content-sale{
   &__header{
     height: 128px;
     align-items: center;
@@ -407,7 +407,7 @@ body {
     word-break: keep-all;
   }
 }
-.content__footer{
+.content-sale__footer{
   padding: 40px 0px 41px;
   margin-top: auto;
   text-align: center;

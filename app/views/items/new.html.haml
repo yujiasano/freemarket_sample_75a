@@ -1,53 +1,53 @@
-.wrapper
-  .content
-    .content__header
+.wrapper-sale
+  .content-sale
+    .content-sale__header
       =link_to "#" do
         = image_tag "logo.png", alt: "ロゴ"
-    .content__main
-      .content__main__box
+    .content-sale__main
+      .content-sale__main__box
         %form
-          .content__main__box__form
-            .content__main__box__form__inner
-              .content__main__box__form__inner__title
+          .content-sale__main__box__form
+            .content-sale__main__box__form__inner
+              .content-sale__main__box__form__inner__title
                 %label
                   出品画像
                 %span
                   必須
               %p
                 最大10枚までアップデートできます。
-              .content__main__box__form__inner__input
-                .content__main__box__form__inner__input__inner
-                  .content__main__box__form__inner__input__inner__icon
+              .content-sale__main__box__form__inner__input
+                .content-sale__main__box__form__inner__input__inner
+                  .content-sale__main__box__form__inner__input__inner__icon
                     = icon('fas', 'camera', class: 'icon')
                     %p
                       ドラッグアンドドロップ
                       %br
                       またはクリックしてファイルをアップロード
           %hr
-          .content__main__box__form
-            .content__main__box__form__item
-              .content__main__box__form__inner__title
+          .content-sale__main__box__form
+            .content-sale__main__box__form__item
+              .content-sale__main__box__form__inner__title
                 %label
                   商品名
                 %span
                   必須
-              .content__main__box__form__item__box
-                .content__main__box__form__item__box__input
+              .content-sale__main__box__form__item__box
+                .content-sale__main__box__form__item__box__input
                   %input{type: "text", name: "name", value: "", placeholder: "40文字まで"}
 
-            .content__main__box__form__intro
-              .content__main__box__form__inner__title
+            .content-sale__main__box__form__intro
+              .content-sale__main__box__form__inner__title
                 %label
                   商品の説明
                 %span
                   必須
-              .content__main__box__form__inner__intro
+              .content-sale__main__box__form__inner__intro
                 =text_area_tag :hoge, "", class:"", rows: 7,  placeholder: "商品の説明（必須 1,000文字以内）"
-                .content__main__box__form__inner__intro__bottom
+                .content-sale__main__box__form__inner__intro__bottom
                   %span 0/1000
 
           %hr
-          .content__main__box__form
+          .content-sale__main__box__form
             %p
               商品の詳細
             .item-dteil
@@ -93,7 +93,7 @@
                       %option{value: "目立った傷や汚れあり"} 目立った傷や汚れあり
                       %option{value: "全体的に状態が悪い"} 全体的に状態が悪い         
           %hr
-          .content__main__box__form
+          .content-sale__main__box__form
             %p
               配送料について
               = link_to "#" do
@@ -150,7 +150,7 @@
                       %option{value: "2~3日で発送"} 2~3日で発送
                       %option{value: "4~7日で発送"} 4~7日で発送
           %hr
-          .content__main__box__form
+          .content-sale__main__box__form
             %p
               価格（¥300〜9,999,999）
               = link_to "#" do
@@ -210,15 +210,15 @@
               加盟店規約
             %p
               に同意したことになります。
-    .content__footer
-      .content__footer__top
+    .content-sale__footer
+      .content-sale__footer__top
         %ul
           %li
             = link_to "#" do
               プライバシーポリシー
           %li
             = link_to "#" do
-              メルカリ利用規約
+              フリマ利用規約
           %li
             = link_to "#" do
               特定商取引に関する表記

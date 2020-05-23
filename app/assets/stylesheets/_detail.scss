@@ -15,7 +15,7 @@ img {
 
 
 /* hedaer */
-.header{
+.header-detail{
   padding: 0 60px;
   &__contents{
     max-width: 1040px;
@@ -120,12 +120,14 @@ img {
 
 
 /* ヘッダーしたナビ */
-.nav{
+.nav-detail{
   width: 100%;
   border-top: 1px solid #eee;
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
   position: relative;
   padding: 0 60px;
+  display: block;
+  height: 54px;
   &__ul{
     padding: 17px 0 16px;
     width: 100%;
@@ -142,17 +144,17 @@ img {
     }
   }
 }
-.nav__ul__li:last-child{
+.nav-detail__ul__li:last-child{
   font-weight: bold;
 }
-.nav__ul:after{
+.nav-detail__ul:after{
   display: block;
   content: "";
   clear: both;
 }
 
 /* main contents */
-.contents{
+.contents-main{
   background-color: #f8f8f8;
   &__main{
     padding: 40px;
@@ -378,7 +380,7 @@ img {
     }
   }
 }
-.footer{
+.footer-main{
   padding: 60px 0;
   color: #fff;
   background-color: #272727;
