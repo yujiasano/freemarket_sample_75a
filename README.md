@@ -36,6 +36,7 @@
 |prefecture|string|null: false|
 |municipalities|string|null: false|
 |address|string|null: false|
+|apartment|string||
 |user|references|null: false
 
 ### Association
