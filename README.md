@@ -21,9 +21,7 @@
 |introduction|text||
 |icon|string||
 |phone_number|integer|null: false|
-|birth_year|integer|null: false|
-|biirth_month|integer|null: false|
-|birth_day|integer|null: false|
+|birthday|integer|null: false|
 |user|references|null: false|
 
 ### Association
