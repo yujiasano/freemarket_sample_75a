@@ -1,0 +1,91 @@
+.wrapper__pur
+  .pur-header
+    %h1
+      = link_to "#" do
+        = image_tag "logo.png", alt: "ロゴ"
+  .pur-main
+    %section.pur-main__section
+      %h2
+        購入内容の確認
+      %section.pur-main__item
+        .pur-main__item__inner
+          .pur-main__item__inner__box
+            %h3
+              = image_tag "products1.png", alt: "ロゴ"
+            .pur-main__item__inner__box__detail
+              %p.pur-main__item__inner__box__detail__name
+                タイトスカート（○○ブランド・新商品）
+              %p.pur-main__item__inner__box__detail__price
+                %span
+                  ¥20000
+                %span.pur-main__item__inner__box__detail__price__fee
+                  （税込）送料込み
+      %section.pur-main__detail
+        .pur-main__detail__inner
+          %form
+            %ul.pur-main__detail__inner__price
+              %li.pur-main__detail__inner__price__box
+                .pur-main__detail__inner__price__box__title
+                  支払い金額
+                .pur-main__detail__inner__price__box__price
+                  %span
+                    ¥20,000
+            %section.pur-main__detail__inner__payment
+              .pur-main__detail__inner__payment__inner
+                .pur-main__detail__inner__payment__inner__method
+                  %h3.pur-main__detail__inner__payment__inner__method__h3
+                    支払い方法
+                  = link_to "#", class:"pur-main__detail__inner__payment__inner__method__a" do
+                    %span
+                      変更する
+                %p.pur-main__detail__inner__payment__inner__card
+                  %br
+                  クレジットカード
+                  %br
+                  ****************
+                  %br
+                  有効期限 12 / 25
+                %figure.pur-main__detail__inner__payment__inner__figure
+                  = image_tag "jcb.svg", alt: "ロゴ"
+            %section.pur-main__detail__inner__delivery
+              .pur-main__detail__inner__delivery__inner
+                .pur-main__detail__inner__delivery__inner__title
+                  %h3.pur-main__detail__inner__delivery__inner__title__h3
+                    配送先
+                  = link_to "#", class:"pur-main__detail__inner__delivery__inner__title__a" do
+                    %span
+                      変更する
+                %address.pur-main__detail__inner__delivery__inner__address
+                  %p.pur-main__detail__inner__delivery__inner__address__p
+                    %br
+                    〒453-0014
+                    %br
+                    愛知県名古屋市中村区則武１丁目９−１９
+                    %br
+                    白石 麻衣
+            %section.pur-main__detail__inner__note
+              %p.pur-main__detail__inner__note__p
+                郵便局/コンビニ受取をご希望の方は、購入後に
+                %span.pur-main__detail__inner__note__p__span
+                  取引画面
+              %p.pur-main__detail__inner__note__p
+                から受取場所を変更をすることが可能です。出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
+              %button{type: "submit", class:"pur-main__detail__inner__note__btn"}
+                購入する
+  .pur-footer
+    %nav.pur-footer__nav
+      %ul.pur-footer__nav__ul
+        %li
+          = link_to "#", class:"pur-footer__nav__ul__a" do
+            プライバシーポリシー
+        %li
+          = link_to "#", class:"pur-footer__nav__ul__a" do
+            フリマ利用規約
+        %li
+          = link_to "#", class:"pur-footer__nav__ul__a" do
+            特定商取引に関する表記
+    = link_to "#", class:"pur-footer__logo" do
+      = image_tag "logo.png", alt: "ロゴ"
+    %p.pur-footer__bottom
+      %small.pur-footer__bottom__small
+        © Furima app,     xxxx.
