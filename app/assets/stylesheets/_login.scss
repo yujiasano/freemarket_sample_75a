@@ -15,8 +15,9 @@
 }
 .login_form {
   width: 456px;
+  padding-bottom: 30px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: whitesmoke;
   .signin_form {
     
     .login_no_account {
@@ -24,6 +25,7 @@
       padding-bottom: 20px;
       border-bottom: 1px solid #eee;
       p {
+        padding-top: 20px;
         font-size: 14px;
       }
       .sign_up_btn {
