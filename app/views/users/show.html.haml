@@ -1,0 +1,298 @@
+.header
+  .header__contents
+    .header__contents__content
+      .header__contents__content__logo
+        =link_to "#" do
+          = image_tag "logo.png", alt: "ロゴ"
+      .header__contents__content__search-box
+        %form
+          %input.header__contents__content__search-box__input{:name => "", :prlaceholder => "キーワ-ドから探す",:type => "", :value => ""}
+          %button{type: "submit"}
+            .header__contents__content__search-box__icon
+              =link_to "#" do
+                = image_tag "icon-search 1.png", alt: "ロゴ"
+    .header__contents__nav-list
+      
+      %ul.header__contents__nav-list__left-list
+      
+        %li.header__contents__nav-list__left-list__category
+          =link_to "#" do
+            カテゴリー
+        %li.header__contents__nav-list__left-list__brand
+          =link_to "#" do
+            ブランド
+      %ul.header__contents__nav-list__right-list
+        %li.header__contents__nav-list__right-list__topic
+          =link_to "#" do
+            お知らせ
+        %li.header__contents__nav-list__right-list__necessary
+          =link_to "#" do
+            やることリスト
+        %li.header__contents__nav-list__right-list__mypage
+          =link_to "#" do
+            マイページ
+
+        
+
+
+.bread-crumbs
+  %ul.bread-crumbs__nav
+    %li.bread-crumbs__nav__li
+      =link_to "#" do
+        メルカリ
+    
+
+
+.main-contents
+  .main-contents__side-container
+    %nav.main-contents__side-container__mypage-nav
+      %ul.main-contents__side-container__mypage-nav__ul
+        %li.main-contents__side-container__mypage-nav__ul__li
+          =link_to "#", class:"main-contents__side-container__mypage-nav__ul__li__a first" do
+            マイページ
+            = icon('fas', 'chevron-right', class: 'mypage-icon-first')
+        %li
+          =link_to "#", class:"main-contents__side-container__mypage-nav__ul__li__a" do
+            やることリスト
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+        %li
+          =link_to "#", class:"main-contents__side-container__mypage-nav__ul__li__a" do
+            いいね一覧
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+        %li
+          =link_to "#", class:"main-contents__side-container__mypage-nav__ul__li__a" do
+            出品する
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+        %li
+          =link_to "#", class:"main-contents__side-container__mypage-nav__ul__li__a" do
+            下書き一覧
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+        %li
+          =link_to "#", class:"main-contents__side-container__mypage-nav__ul__li__a" do
+            出品した商品ー出品中
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+        %li
+          =link_to "#", class:"main-contents__side-container__mypage-nav__ul__li__a" do
+            出品した商品ー取引中
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+        %li
+          =link_to "#", class:"main-contents__side-container__mypage-nav__ul__li__a" do
+            出品した商品ー売却済み
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+        %li
+          =link_to "#", class:"main-contents__side-container__mypage-nav__ul__li__a" do
+            購入した商品ー取引中
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+        %li
+          =link_to "#", class:"main-contents__side-container__mypage-nav__ul__li__a" do
+            購入した商品ー過去の取引
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+        %li
+          =link_to "#", class:"main-contents__side-container__mypage-nav__ul__li__a" do
+            ニュース一覧
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+        %li
+          =link_to "#", class:"main-contents__side-container__mypage-nav__ul__li__a" do
+            評価一覧
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+        %li
+          =link_to "#", class:"main-contents__side-container__mypage-nav__ul__li__a" do
+            ガイド
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+        %li
+          =link_to "#", class:"main-contents__side-container__mypage-nav__ul__li__a" do
+            お問い合わせ
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+
+      %h3.main-contents__side-container__mypage-nav__h3
+        メルペイ
+      %ul.main-contents__side-container__mypage-nav__merpay
+        %li.main-contents__side-container__mypage-nav__merpay__li
+          =link_to "#", class: "main-contents__side-container__mypage-nav__merpay__li__a" do
+            残高・振込申請
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+        %li.main-contents__side-container__mypage-nav__merpay__li
+          =link_to "#", class: "main-contents__side-container__mypage-nav__merpay__li__a" do
+            ポイント
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+
+      %h3.main-contents__side-container__mypage-nav__h3
+        設定
+      %ul.main-contents__side-container__mypage-nav__config
+        %li.main-contents__side-container__mypage-nav__config__li
+          =link_to "#", class: "main-contents__side-container__mypage-nav__config__li__a" do
+            プロフィール
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+        %li
+          =link_to "#", class: "main-contents__side-container__mypage-nav__config__li__a" do
+            発送元・お届け先住所
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+        %li
+          =link_to "#", class: "main-contents__side-container__mypage-nav__config__li__a" do
+            クレジットカード情報
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+        %li
+          =link_to "#", class: "main-contents__side-container__mypage-nav__config__li__a" do
+            メール/パスワード
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+        %li
+          =link_to "#", class: "main-contents__side-container__mypage-nav__config__li__a" do
+            本人情報
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+        %li
+          =link_to "#", class: "main-contents__side-container__mypage-nav__config__li__a" do
+            電話番号の確認
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+        %li
+          =link_to "#", class: "main-contents__side-container__mypage-nav__config__li__a" do
+            ログアウト
+            = icon('fas', 'chevron-right', class: 'mypage-icon')
+  .main-contents__container
+    .main-contents__container__icon
+      =link_to "#", class:"main-contents__container__icon__a" do
+        %figure.main-contents__container__icon__a__figure
+          = image_tag "member_photo_noimage_thumb.png", alt: "ロゴ"
+        %h2.main-contents__container__icon__a__h2
+          白石 麻衣
+        .main-contents__container__icon__a__number
+          .main-contents__container__icon__a__number__value
+            評価
+            %span.main-contents__container__icon__a__number__value__span
+              40
+          .main-contents__container__icon__a__number__value-listing
+            出品数
+            %span.main-contents__container__icon__a__number__value__span
+              32
+    %section.main-contents__container__tab
+      %ul.main-contents__container__tab__ul
+        %li.main-contents__container__tab__ul__news
+          %h3.main-contents__container__tab__ul__news__h3
+            =link_to "#", class:"main-contents__container__tab__ul__news__h3__a" do
+              お知らせ
+        %li.main-contents__container__tab__ul__list
+          %h3.main-contents__container__tab__ul__list__h3
+            =link_to "#", class:"main-contents__container__tab__ul__list__h3__a" do
+              やることリスト
+      .main-contents__container__tab__inner
+        %ul.main-contents__container__tab__inner__ul
+          %li.main-contents__container__tab__inner__ul__list
+            =link_to "#", class:"main-contents__container__tab__inner__ul__list__a" do
+              %figure.main-contents__container__tab__inner__ul__list__a__figure
+                = image_tag "icon.png", alt: "ロゴ"
+              .main-contents__container__tab__inner__ul__list__a__box
+                .main-contents__container__tab__inner__ul__list__a__box__text
+                  買うだけで《最大1,000円分》をポイントバック！欲しかった商品をゲットしよう！事務局から個別メッセージ「ログイン通知」
+                %time.main-contents__container__tab__inner__ul__list__a__box__time
+                  = icon('fas', 'clock', class: 'time-clock')
+                  %span.main-contents__container__tab__inner__ul__list__a__box__time__span
+                    ２日前
+          %li.main-contents__container__tab__inner__ul__list
+            =link_to "#", class:"main-contents__container__tab__inner__ul__list__a" do
+              %figure.main-contents__container__tab__inner__ul__list__a__figure
+                = image_tag "icon.png", alt: "ロゴ"
+              .main-contents__container__tab__inner__ul__list__a__box
+                .main-contents__container__tab__inner__ul__list__a__box__text
+                  3日後、5%還元クーポンの有効期限が切れます！タップして詳細を確認しましょう。
+                %time.main-contents__container__tab__inner__ul__list__a__box__time
+                  = icon('fas', 'clock', class: 'time-clock')
+                  %span.main-contents__container__tab__inner__ul__list__a__box__time__span
+                    ２日前
+          %li.main-contents__container__tab__inner__ul__list
+            =link_to "#", class:"main-contents__container__tab__inner__ul__list__a" do
+              %figure.main-contents__container__tab__inner__ul__list__a__figure
+                = image_tag "icon.png", alt: "ロゴ"
+              .main-contents__container__tab__inner__ul__list__a__box
+                .main-contents__container__tab__inner__ul__list__a__box__text
+                  《今ならP1,000もらえるキャンペーンも》フリマスマート払いなら気になる商品が今すぐ買える！
+                %time.main-contents__container__tab__inner__ul__list__a__box__time
+                  = icon('fas', 'clock', class: 'time-clock')
+                  %span.main-contents__container__tab__inner__ul__list__a__box__time__span
+                    ３日前
+          %li.main-contents__container__tab__inner__ul__list
+            =link_to "#", class:"main-contents__container__tab__inner__ul__list__a" do
+              %figure.main-contents__container__tab__inner__ul__list__a__figure
+                = image_tag "icon.png", alt: "ロゴ"
+              .main-contents__container__tab__inner__ul__list__a__box
+                .main-contents__container__tab__inner__ul__list__a__box__text
+                  明日、5%還元クーポンの有効期限が切れます！タップして詳細を確認しましょう。
+                %time.main-contents__container__tab__inner__ul__list__a__box__time
+                  = icon('fas', 'clock', class: 'time-clock')
+                  %span.main-contents__container__tab__inner__ul__list__a__box__time__span
+                    ５日前
+    %section.main-contents__container__tab-bottom
+      %h2.main-contents__container__tab-bottom__title
+        購入した商品
+      %ul.main-contents__container__tab-bottom__condition
+        %li.main-contents__container__tab-bottom__condition__in
+          %h3.main-contents__container__tab-bottom__condition__in__h3
+            =link_to "#", class:"main-contents__container__tab-bottom__condition__in__h3__a" do
+              取引中
+        %li.main-contents__container__tab-bottom__condition__past
+          %h3.main-contents__container__tab-bottom__condition__past__h3
+            =link_to "#", class:"main-contents__container__tab-bottom__condition__past__h3__a" do
+              取引中
+      .main-contents__container__tab-bottom__box
+        %ul.main-contents__container__tab-bottom__box__ul
+          %li.main-contents__container__tab-bottom__box__ul__li
+            取引中の商品がありません
+%aside.footer-banner
+  .footer-banner__inner
+    %h2
+      だれでもかんたん、人生を変えるフリマアプリ
+    %p
+      今すぐ無料ダウンロード！
+    .footer-banner__inner__link
+      =link_to "#" do
+        = image_tag "app.svg", alt: "ロゴ"
+      =link_to "#" do
+        = image_tag "goo.svg", alt: "ロゴ"
+.footer-main
+  %ul.footer-main__toc
+    %li.footer-main__toc__content
+      %h2
+        FURIMAについて
+      %ul
+        %li
+          =link_to "#" do
+            会社概要（運営会社）
+        %li
+          =link_to "#" do
+            プライバシーポリシー
+        %li
+          =link_to "#" do
+            FURIMA利用規約
+        %li
+          =link_to "#" do
+            ポイントに関する特約
+    %li.footer-main__toc__content
+      %h2
+        FURIMAを見る
+      %ul
+        %li
+          =link_to "#" do
+            カテゴリー一覧
+        %li
+          =link_to "#" do
+            ブランド一覧
+    %li.footer-main__toc__content
+      %h2
+        ヘルプ＆ガイド
+      %ul
+        %li
+          =link_to "#" do
+            FURIMAガイド
+        %li
+          =link_to "#" do
+            FURIMAロゴ利用ガイドライン
+        %li
+          =link_to "#" do
+            お知らせ
+  .footer-main__logo
+    =link_to "#" do
+      = image_tag "logo-white.png", alt: "ロゴ"
+  %p
+    © FURIMA
+=link_to "#" do
+  .listing-btn
+    %span 出品する
+    = image_tag "syuppin.svg", alt: "ロゴ"
