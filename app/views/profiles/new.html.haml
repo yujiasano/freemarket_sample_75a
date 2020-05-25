@@ -1,0 +1,54 @@
+.signin-header
+  .signin-header__contents
+    .signin-header__contents__content
+      %h1.signin-header__contents__content__logo
+        =link_to "#" do
+          = image_tag "logo.png", alt: "ロゴ"
+      %nav.signin-header__progress
+        %ol
+          %li.singin-header__progress__text--active{ id: "first" }
+            会員情報
+            .signin-header__progress__round--red
+          %li.signin-header__progress__text--main
+            お届け先住所入力
+            .signin-header__progress__round--main   
+          %li.signin-header__progress__text--main
+            プロフィール
+            .signin-header__progress__round--main    
+          %li.signin-header__progress__text--end{ id: "end" }
+            完了
+            .signin-header__progress__round
+.signin_form
+  .signin_form__title
+    本人確認
+  .signin_form__info
+    安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+  = form_with url:"#" do |f|
+    .signin_form__group
+      = f.label :"お名前(全角)"
+      %span.signin_form__group__require 必須
+    = f.text_field :family_name, {placeholder:"例) 山田",class:'signin_form__group__input--half'}
+    = f.text_field :first_name, {placeholder:"例) 太郎",class:'signin_form__group__input--half'}
+    .signin_form__group
+      = f.label :"お名前カナ(全角)"
+      %span.signin_form__group__require 必須
+    = f.text_field :family_name_kana, {placeholder:"例) ヤマダ",class:'signin_form__group__input--half'}
+    = f.text_field :first_name_kana, {placeholder:"例) タロウ",class:'signin_form__group__input--half'}
+    .signin_form__group
+      = f.label :"生年月日"
+      %span.signin_form__group__require 必須
+      %br
+      .birthday-select-wrap
+        != sprintf(f.date_select(:birthday, prefix:'birthday',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+
+
+
+
+    .signin_form__group
+      = f.label :電話番号
+      .signin_form__group__require 必須
+      = f.text_field :phone_number,{autofocus: true, placeholder: "例）080-1234-5678", class: 'signin_form__group__input'}
+    .signin_form__group
+      %p.signin_form__group__text--center
+        
+      = f.submit '登録する', class: "btn-default btn-red", url: "address_path"

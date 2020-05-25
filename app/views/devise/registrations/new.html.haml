@@ -1,0 +1,55 @@
+.signin-header
+  .signin-header__contents
+    .signin-header__contents__content
+      %h1.signin-header__contents__content__logo
+        =link_to "#" do
+          = image_tag "logo.png", alt: "ロゴ"
+      %nav.signin-header__progress
+        %ol
+          %li.singin-header__progress__text--active{ id: "first" }
+            会員情報
+            .signin-header__progress__round--red
+          %li.signin-header__progress__text
+            お届け先住所入力
+            .signin-header__progress__round     
+          %li.signin-header__progress__text
+            プロフィール
+            .signin-header__progress__round    
+          %li.signin-header__progress__text--end{ id: "end" }
+            完了
+            .signin-header__progress__round
+
+.signin_form
+  = form_with url:"#" do |f|
+    = render "devise/shared/error_messages", resource: @user
+    .signin_form__group
+      = f.label :ニックネーム
+      %span.signin_form__group__require 必須
+      = f.text_field :nickname, {placeholder: "例) フリマ太郎",class:'signin_form__group__input'}
+    .signin_form__group
+      = f.label :メールアドレス
+      %span.signin_form__group__require 必須
+      = f.email_field :email, {autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可",class:'signin_form__group__input'}
+    .signin_form__group
+      = f.label :パスワード
+      %span.signin_form__group__require 必須
+      = f.password_field :password,{autocomplete: "new-password",placeholder: "7文字以上の半角英数字",class:'signin_form__group__input',id:"password"}
+      %p.signin_form__group__info ※ 英字と数字の両方を含めて設定してください
+      -# .form-password-revelation-toggle
+      -#   .checkbox-default
+      -#     %input#reveal_password{type: "checkbox",class:"icon-check"}
+      -#     %label{for: "reveal_password"} パスワードを表示する
+      -#   .form-password-revelation-revealed-password-container
+      -#     %span.form-password-revelation-revealed-password
+    
+    .signin_form__group
+      = f.label :パスワード確認用
+      %span.signin_form__group__require 必須
+      = f.password_field :password_confirmation,{autocomplete: "new-password",placeholder: "7文字以上の半角英数字",class:'signin_form__group__input',id:"password"}
+    
+    .signin_form__group
+      %p.signin_form__group__text-center
+        「次へ進む」のボタンを押すことにより、
+        = link_to "利用規約", "#" , target:"_blank"
+        に同意したものとみなします
+      = f.submit '次へ', class: "btn-default", url: "new_address_path"

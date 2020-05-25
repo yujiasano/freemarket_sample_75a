@@ -1,0 +1,36 @@
+.login-header
+  .signin-header__contents
+    .signin-header__contents__content
+      %h1.signin-header__contents__content__logo
+        =link_to "#" do
+          = image_tag "logo.png", alt: "ロゴ"
+.login_form
+  .signin_form
+    .login_no_account
+      %p アカウントをお持ちでない方はこちら
+      = link_to "新規会員登録", new_user_registration_path, class: "sign_up_btn"
+    .login_form_inner
+      = link_to "#", class: "facebook_btn" do
+        = icon('fab', 'facebook-square',  class: "facebook_btn__icon")
+        %span<>
+          Facebookでログイン
+      = link_to "#", class: "google_btn" do
+        = icon('fab', 'google',  class: "google_btn__icon")
+        %span<>
+          Googleでログイン
+      = link_to "#", class: "twitter_btn" do
+        = icon('fab', 'twitter',  class: "twitter_btn__icon")
+        %span<>
+          Twitterでログイン
+
+
+    = form_with url:"#" do |f|
+      
+      .signin_form__group
+        = f.email_field :email, {autofocus: true, autocomplete: "email", placeholder: "メールアドレス",class:'signin_form__group__input'}
+      .signin_form__group
+        = f.password_field :password,{autocomplete: "new-password",placeholder: "パスワード",class:'signin_form__group__input',id:"password"}
+
+      .signin_form__group
+        %p.signin_form__group__text--center
+        = f.submit '登録する', class: "btn-default btn-red", url: "#"

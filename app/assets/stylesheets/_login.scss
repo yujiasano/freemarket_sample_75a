@@ -1,0 +1,91 @@
+.login-header {
+  
+  .signin-header__contents {
+    &__content {
+      
+      &__logo{
+  
+       margin: 0 auto;
+       a {
+         width: 200px;
+       }   
+     }
+    }
+ } 
+}
+.login_form {
+  width: 456px;
+  padding-bottom: 30px;
+  margin: 0 auto;
+  background-color: whitesmoke;
+  .signin_form {
+    
+    .login_no_account {
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+      p {
+        padding-top: 20px;
+        font-size: 14px;
+      }
+      .sign_up_btn {
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 4px;
+        margin: 16px 0 0;
+        color: #fff;
+        background-color: #ea352d;
+        margin-bottom: 20px;
+      }
+    }
+    .login_form_inner {
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+      .facebook_btn {
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 4px;
+        margin: 16px 0 0;
+        background: #385185;
+        color: #fff;
+        
+      }
+      .google_btn {
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        border: #979797 1px solid;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 4px;
+        margin: 16px 0 0;
+        background: #fff;
+        color: #333;
+      }
+      .twitter_btn {
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 4px;
+        margin: 16px 0 0;
+        background: #0099e8;
+        color: #fff;
+      }
+    }
+  }
+}
