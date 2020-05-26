@@ -86,6 +86,7 @@
 |------|----|-------|
 |name|string|null: false, index: true|
 
+
 ### Association
 - has_many :items
 
@@ -93,6 +94,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index: true|
+
 
 ### Association
 - has_many :items
