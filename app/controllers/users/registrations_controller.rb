@@ -80,7 +80,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def profile_params
-    # binding.pry
     params.require(:profile).permit(:family_name, :first_name, :family_name_kana, :first_name_kana, :phone_number, :birthday )
   end
 

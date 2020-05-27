@@ -23,7 +23,6 @@
   .signin_form__title
     お届け先住所入力
   
-  -# = form_with url:"" do |f|
   =form_for(@address, url: addresses_path, method: :post) do |f|
     =render "devise/shared/error_messages", resource: @address
     .signin_form__group

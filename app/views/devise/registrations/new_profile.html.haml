@@ -23,7 +23,7 @@
     本人確認
   .signin_form__info
     安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-  -# = form_with url:"#" do |f|
+
   =form_for(@profile, url: profiles_path, method: :post) do |f|
     =render "devise/shared/error_messages", resource: @profile
     .signin_form__group
