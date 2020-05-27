@@ -1,0 +1,77 @@
+-# 新規登録関係のビューを調整するためのページ
+-# （調整するときにコメントアウトを戻して使用）
+-# .signin-header
+-#   .signin-header__contents
+-#     .signin-header__contents__content
+-#       %h1.signin-header__contents__content__logo
+-#         =link_to "#" do
+-#           = image_tag "logo.png", alt: "ロゴ"
+-#       %nav.signin-header__progress
+-#         %ol
+-#           %li.singin-header__progress__text--active{ id: "first" }
+-#             会員情報
+-#             .signin-header__progress__round--red
+-#           %li.signin-header__progress__text--main
+-#             お届け先住所入力
+-#             .signin-header__progress__round--main   
+-#           %li.signin-header__progress__text--main
+-#             プロフィール
+-#             .signin-header__progress__round--main    
+-#           %li.signin-header__progress__text--finish{ id: "end" }
+-#             完了
+-#             .signin-header__progress__round--finish
+
+-# .login_form
+-#   .signin_form
+-#     .login_no_account
+-#       %p 登録が完了しました
+-#       = link_to "フリマアプリをはじめる", root_path, class: "sign_up_btn"
+  
+
+-# ログイン状態によってヘッダーの表示が変わるか確認するためのビュー↓
+.header
+.header__contents
+  .header__contents__content
+    %h1.header__contents__content__box
+      =link_to "#"do
+        =image_tag "logo.png",alt: "ロゴ"
+    .header__contents__content__search-box
+      %form
+        %input.header__contents__content__search-box__input{:name => "",:placeholder => "キーワード検索", :type =>"", :value => ""}/
+        %button{type: "submit"}
+          .header__contents__content__search-box__icon
+            =image_tag "icon-search 1.png",alt: "ロゴ"
+  .header__contents__nav-list
+    .header__contents__nav-list__left
+      %ul
+        .header__contents__nav-list__left__category
+          %li
+            =link_to "#" do
+              カテゴリー
+              
+        .header__contents__nav-list__left__brand
+          %li
+            =link_to "#" do
+              ブランド
+    .header__contents__nav-list__right
+      %ul
+        -if user_signed_in?
+          .header__contents__nav-list__right__login
+            %li
+              =link_to destroy_user_session_path, method: "DELETE" do
+                ログアウト
+          
+          .header__contens__nav-list__right__new
+            %li 
+              =link_to "#"do
+                マイページ     
+        -else
+          .header__contents__nav-list__right__login
+            %li
+              =link_to new_user_session_path do
+                ログイン
+            
+          .header__contens__nav-list__right__new
+            %li 
+              =link_to "#"do
+                新規登録            
