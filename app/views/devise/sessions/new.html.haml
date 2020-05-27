@@ -24,7 +24,8 @@
           Twitterでログイン
 
 
-    = form_with url:"#" do |f|
+    -# = form_with url:user_session_path, method: "POST" do |f|
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       
       .signin_form__group
         = f.email_field :email, {autofocus: true, autocomplete: "email", placeholder: "メールアドレス",class:'signin_form__group__input'}

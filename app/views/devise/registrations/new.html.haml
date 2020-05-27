@@ -20,7 +20,8 @@
             .signin-header__progress__round
 
 .signin_form
-  = form_with url:"#" do |f|
+  -# = form_with url:user_registration_path do |f|
+  = form_for(@user, url: user_registration_path) do |f|
     = render "devise/shared/error_messages", resource: @user
     .signin_form__group
       = f.label :ニックネーム
