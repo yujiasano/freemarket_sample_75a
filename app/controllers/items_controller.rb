@@ -51,8 +51,11 @@ class ItemsController < ApplicationController
   
   
   def destroy
-    @item.destroy
-    redirect_to root_path
+    if @item.destroy
+        redirect_to root_path
+    else
+        render action: :show
+    end
   end
 
   def show
@@ -68,4 +71,6 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
+
 end
+
