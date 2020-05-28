@@ -49,15 +49,15 @@ class ItemsController < ApplicationController
   
   
   def destroy
+    # if item.user_id == current_user.id
     @item = Item.find(params[:id])
     @item.destroy
     redirect_to root_path
-
+    # end
   end
 
   def show
     @item = Item.find(params[:id])
-
   end
 
   private
@@ -65,4 +65,5 @@ class ItemsController < ApplicationController
   def product_params
     params.require(:item).permit(:name, :price, images_attributes: [:src])
   end
+  
 end
