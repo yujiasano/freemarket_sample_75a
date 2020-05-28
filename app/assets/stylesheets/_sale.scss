@@ -28,18 +28,9 @@ body {
     background-color: rgb(255, 255, 255);
     width: 700px;
     margin: 0px auto;
-    height: 2210px;
+    padding-bottom: 20px;
     &__box{
       position: relative;
-      hr{
-        border-top-width: 1px;
-        border-top-color: #efefef;
-        border-left: 0 solid #efefef;
-        border-bottom: 0 solid #efefef;
-        border-right: 0 solid #efefef;
-        border-top-style: solid;
-        margin: 0;
-      }
       &__form{
         padding: 40px;
         p{
@@ -60,7 +51,7 @@ body {
             display: inline-block;
             position: relative;
             width: inherit;
-            input{
+            .input{
               border: 1px solid #ccc;
               border-radius: 4px;
               box-sizing: border-box;
@@ -70,7 +61,7 @@ body {
               margin: 0;
               outline: none;
               padding: 0 16px;
-              width: inherit;
+              width: 100%;;
             }
           }
         }
@@ -130,7 +121,7 @@ body {
           &__input{
             margin-top: 16px;
             display: block;
-            height: 150px;
+            height: 156px;
             &__inner{
               align-content: center;
               -webkit-box-align: center;
@@ -237,7 +228,8 @@ body {
         display: inline-block;
         position: relative;
         width: inherit;
-        input{
+        select{
+          background-color: #fff;
           border: 1px solid #ccc;
           border-radius: 4px;
           box-sizing: border-box;
@@ -293,8 +285,6 @@ body {
     &__input{
       align-items: center;
       display: inline-flex;
-      width: 100%;
-      max-width: 285px;
       &__inner{
         display: inline-block;
         position: relative;
@@ -310,7 +300,7 @@ body {
           margin: 0;
           outline: none;
           padding: 0 16px;
-          width: inherit;
+          width: 285px;;
         }
       }
     }
@@ -445,4 +435,92 @@ body {
 .question{
   margin-left: 4px;
   color: #00CCFF;
+}
+
+.item-image{
+  width: 116px;
+  box-sizing: border-box;
+  margin: 16px 0 0 8px;
+  position: relative;
+  display: inline-block;
+  border: 1px solid #eee;
+  vertical-align: top;
+
+  &__content--icon{
+    background-color: rgb(245, 245, 245);
+    &--hr{
+      border-color: rgb(204, 204, 204);
+      border-top-width: 1px;
+      border-left: 0 solid #efefef;
+      border-bottom: 0 solid #efefef;
+      border-right: 0 solid #efefef;
+      border-top-style: solid;
+      margin: 0;
+    }
+  }
+  &__operetion--edit{
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(0, 149, 238);
+    cursor: pointer;
+    display: flex;
+    height: 32px;
+    -webkit-box-pack: center;
+    justify-content: center;
+  }
+}
+#image-box-1{
+  display: inline-block;
+  width: 620px;
+  margin: 16px auto 0;
+}
+.content-sale--hr{
+  border-top-width: 1px;
+  border-top-color: #efefef;
+  border-left: 0 solid #efefef;
+  border-bottom: 0 solid #efefef;
+  border-right: 0 solid #efefef;
+  border-top-style: solid;
+  margin: 0;
+}
+#image-box__container{
+  display:block;
+  height: 160px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(51, 51, 51);
+  position: relative;
+  text-align: center;
+  float: right;
+}
+.item-num-0{
+  width: 100%;
+}
+.item-num-1{
+  width: 491px;
+}
+.item-num-2{
+  width: 363px;
+}
+.item-num-3{
+  width: 234px;
+}
+.item-num-4{
+  width: 106px;
+}
+//下段のfile_field
+.item-num-5{
+  width: 620px;
+}
+.item-num-6{
+  width: 491px;
+}
+.item-num-7{
+  width: 363px;
+}
+.item-num-8{
+  width: 234px;
+}
+.item-num-9{
+  width: 106px;
 }

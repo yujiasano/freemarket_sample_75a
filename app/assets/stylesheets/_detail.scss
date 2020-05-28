@@ -1,4 +1,4 @@
-* {
+** {
   box-sizing: border-box;
 }
 body {
@@ -8,15 +8,16 @@ a{
   text-decoration: none;
   color: #333;
 }
-img {
-  width: 100%;
-  vertical-align: bottom;
-}
+// img {
+//   width: 100%;
+//   vertical-align: bottom;
+// }
 
 
 /* hedaer */
 .header-detail{
   padding: 0 60px;
+  background-color: white;
   &__contents{
     max-width: 1040px;
     width: 100%;
@@ -69,7 +70,7 @@ img {
     &__nav-list{
       font-size: 14px;
       display: flex;
-      margin-bottom: 10px;
+      
       &__left{
         position: relative;
         display: flex;
@@ -128,6 +129,7 @@ img {
   padding: 0 60px;
   display: block;
   height: 54px;
+  background-color: white;
   &__ul{
     padding: 17px 0 16px;
     width: 100%;

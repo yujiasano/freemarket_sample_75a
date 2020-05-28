@@ -1,0 +1,10 @@
+.wrapper-sale
+  .content-sale
+    .content-sale__header
+      =link_to "#" do
+        = image_tag "logo.png", alt: "ロゴ"
+    .content-sale__main__box
+      .sale-success
+        %h3.sale-success__h3
+          出品が完了しました。
+        = link_to "トップページにもどる", "root_path", class: "sale-success__a"
