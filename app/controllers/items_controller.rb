@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:destroy, :show]
+
   def index
   end
 
@@ -49,15 +51,11 @@ class ItemsController < ApplicationController
   
   
   def destroy
-    # if item.user_id == current_user.id
-    @item = Item.find(params[:id])
     @item.destroy
     redirect_to root_path
-    # end
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   private
@@ -66,4 +64,8 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :price, images_attributes: [:src])
   end
   
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end
