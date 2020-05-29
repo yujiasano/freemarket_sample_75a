@@ -266,7 +266,7 @@ a{
           margin: 24px 0 0 0;
         
         a{
-          margin-right: 1px;
+          margin-right: 10px;
         }
         img{
           width: 150px;
@@ -309,6 +309,7 @@ a{
           margin: auto 0;
           display: flex;
           flex-wrap: wrap;
+          padding-left:100px;
 
           &__item{
             display: flex;
@@ -374,7 +375,7 @@ a{
             }
           }
           &__lists{
-            width: 780px;
+            width: 1000px;
             margin: 26px auto;
             display: flex;
             justify-content: space-around;
@@ -386,8 +387,9 @@ a{
               // float: left;
 
               a{
-                background-color: #fff;
+                // background-color: #fff;
                 display: inline-block;
+                padding:10px;
               }
             
               &__description--image{
@@ -410,13 +412,25 @@ a{
                   height: 150px;
                    object-fit: cover;
                 }
-                
-              }
+                   
 
+                   }
+                   
+
+              
+                &__productList--body{
+                
+                  color: #333;
+                  padding-top: 16px;
+                  background-color: white;
+              }
+            
               &__productList--body{
-                background-color: white;
+                
                 color: #333;
                 padding-top: 16px;
+                background-color: white;
+              }  
 
                 h3{
                   overflow: hidden;
@@ -424,14 +438,17 @@ a{
                   font-size: 16px;
                   text-align: left;
                 }
-              }
+              
               &__productList--details{
                 font-size: 16px;
+                background-color: white;
+                
 
                 ul{
                   display: flex;
                   align-items: center;
                   justify-content: space-between;
+                  
 
                   i{
                     padding-left:120px;
@@ -444,11 +461,34 @@ a{
                     padding-bottom:15px;
                   }
                 }
-
               }
           }
-        }
-      }
+        }     
+      }  
+        
+          .item__box__picture__sold{
+            width: 0;
+            height: 0;
+            border-width: 120px 120px 0 0;
+            border-color: #ea352d transparent; 
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            border-style: solid;
+            &__inner{
+              top: -110px;
+              font-size: 25px;
+              position: absolute;
+              left: 3px;
+              z-index: 2;
+              color: #fff;
+              transform: rotate(-45deg);
+              letter-spacing: 2px;
+              font-weight: 600;
+            }
+          }
     
     .banner{
       background-image: image-url('bg-appBanner-pict.jpg');
@@ -565,23 +605,5 @@ font-size: 13px;
     }
 }
 
-      
-    
 
-
-
-
-  
-  
-  
-
-
-  
-
-
-
-  
-     
-    
-    
   
