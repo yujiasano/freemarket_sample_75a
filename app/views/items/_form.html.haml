@@ -1,26 +1,26 @@
-= form_for @item do |f|
-  .content-sale__main__box__form
-    .content-sale__main__box__form__inner
-      .content-sale__main__box__form__inner__title
-        %label
-          出品画像
-        %span
-          必須
-      %p
-        最大10枚までアップデートできます。
-      #image-box-1
-        .item-num-0#image-box__container
-          = f.fields_for :images do |i|
-            .content-sale__main__box__form__inner__input
-              .content-sale__main__box__form__inner__input__inner#border-line
-                = i.file_field :src, id: "img-file", class: "upload-image", 'data-image': 0, type: "file", name: "item[images_attributes][0][image]", style: "display:none"
-                -# = i.file_field :src, type: 'file', name: "item[images_attributes][0][image]", value:"", style: "display:none", id:"img-file"
-                %label{for: "img-file"}
-                  = icon('fas', 'camera', class: 'icon')
-                  %p
-                    ドラッグアンドドロップ
-                    %br
-                    またはクリックしてファイルをアップロード
+= form_for @item , html: {id: "item-dropzone"} do |f|
+  = f.hidden_field :trading_status, value: "販売中"
+  -# = f.hidden_field :user_id, value: current_user.id
+  .upload-box
+    .upload-box__head
+      %h3.bigger 出品画像
+      %span 必須
+    %p.discription 最大10枚までアップロードできます
+
+    
+    = f.fields_for :images do |image|
+      .dropzone-container
+        #preview
+        .dropzone-area
+          = image.label :image, class: "dropzone-box", for: "upload-image" do
+            .input_area
+              = image.file_field :image, multiple: true, name: 'item_images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+            %p ここをクリックしてください
+      .dropzone-container
+        #preview2
+        .dropzone-area2
+          = image.label :image, class: "dropzone-box", for: "upload-image" do
+            %p ここをクリックしてください
   %hr.content-sale--hr
   .content-sale__main__box__form
     .content-sale__main__box__form__item
