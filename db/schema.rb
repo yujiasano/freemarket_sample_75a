@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_05_28_062616) do
+
+ActiveRecord::Schema.define(version: 2020_05_26_115358) do
+
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "postal_code", null: false
@@ -73,11 +77,11 @@ ActiveRecord::Schema.define(version: 2020_05_28_062616) do
     t.string "first_name_kana", null: false
     t.text "introduction"
     t.string "icon"
-    t.integer "phone_number", null: false
+    t.string "phone_number", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "birthday", null: false
+    t.date "birthday", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -96,6 +100,10 @@ ActiveRecord::Schema.define(version: 2020_05_28_062616) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "images", "items"
+
+
+  add_foreign_key "items", "brands"
+
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
   add_foreign_key "profiles", "users"
