@@ -1,12 +1,11 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:destroy, :show]
+
   def index
+    @items = Item.all
   end
 
-
-
-
-
-
+  
 
 
 
@@ -96,11 +95,16 @@ class ItemsController < ApplicationController
   
   
   
+  
   def destroy
+    if @item.destroy
+        redirect_to root_path
+    else
+        render action: :show
+    end
   end
 
   def show
-
   end
 
   private
@@ -108,4 +112,11 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :price, :description, :status, :size, :trading_status, :delivery_area, :delivery_days, :delivery_burden, :brand_id, :category_id, images_attributes: [:image])
   end
+  
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
 end
+
