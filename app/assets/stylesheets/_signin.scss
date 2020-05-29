@@ -186,6 +186,34 @@ a{
             height: 2px;
             background: #ea352d;
           }
+          .signin-header__progress__text--finish {
+            font-weight: 600;
+            color: #ea352d;
+            margin-right: 40px;
+            position: relative;
+            z-index: 1;
+            min-width: 40px;
+            font-size: 12px;
+            text-align: center;
+            .signin-header__progress__round--finish {
+              width: 12px;
+              height: 12px;
+              margin: 8px auto 0;
+              background: #ea352d;
+              border-radius: 50%;
+            }
+          }
+          .signin-header__progress__text--finish::before {
+            right: 20px;
+            position: absolute;
+            bottom: 5px;
+            z-index: -1;
+            display: block;
+            content: "";
+            width: 100%;
+            height: 2px;
+            background: #ea352d;
+          }
         }
       }
     }
@@ -258,21 +286,21 @@ a{
       }
     }
     .birthday-select-wrap {
-      #birthday_birthday_1i {
+      .year {
         width: 76px;
         height: 48px;
         font-size: 100%;
         margin-top: 10px;
 
       }
-      #birthday_birthday_2i {
+      .month {
         width: 76px;
         height: 48px;
         font-size: 100%;
         margin-top: 10px;
 
       }
-      #birthday_birthday_3i {
+      .day {
         width: 76px;
         height: 48px;
         font-size: 100%;
