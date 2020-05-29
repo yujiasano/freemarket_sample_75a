@@ -16,8 +16,8 @@ class Item < ApplicationRecord
     送料込み（出品者負担）:0,着払い（購入者負担）:1
   }
 
-    enum delivery_days:{
-      "1~2日で発送":0,"2~3日で発送":1,"4~7日で発送":2
-    }
+  enum delivery_days:{
+    "1~2日で発送":0,"2~3日で発送":1,"4~7日で発送":2
+  }
 
 end
