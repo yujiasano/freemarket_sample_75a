@@ -2,7 +2,7 @@
   .signin-header__contents
     .signin-header__contents__content
       %h1.signin-header__contents__content__logo
-        =link_to "#" do
+        =link_to root_path do
           = image_tag "logo.png", alt: "ロゴ"
       %nav.signin-header__progress
         %ol
@@ -53,3 +53,5 @@
         = link_to "利用規約", "#" , target:"_blank"
         に同意したものとみなします
       = f.submit '次へ', class: "btn-default", url: "new_address_path"
+
+= render partial: 'home/new'      

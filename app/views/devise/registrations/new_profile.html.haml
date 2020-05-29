@@ -2,7 +2,7 @@
   .signin-header__contents
     .signin-header__contents__content
       %h1.signin-header__contents__content__logo
-        =link_to "#" do
+        =link_to root_path do
           = image_tag "logo.png", alt: "ロゴ"
       %nav.signin-header__progress
         %ol
@@ -23,7 +23,7 @@
     本人確認
   .signin_form__info
     安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-
+  .signin_form__inner
   =form_for(@profile, url: profiles_path, method: :post) do |f|
     =render "devise/shared/error_messages", resource: @profile
     .signin_form__group
@@ -56,3 +56,5 @@
       %p.signin_form__group__text--center
         
       = f.submit '登録する', class: "btn-default btn-red", url: "address_path"
+
+= render partial: 'home/new'

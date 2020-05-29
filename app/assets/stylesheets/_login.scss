@@ -15,17 +15,19 @@
 }
 .login_form {
   width: 456px;
-  padding-bottom: 30px;
+  // padding-top: 10px;
   margin: 0 auto;
-  background-color: whitesmoke;
+  background-color: #fff;
   .signin_form {
     
     .login_no_account {
       text-align: center;
+      padding-top: 30px;
       padding-bottom: 20px;
       border-bottom: 1px solid #eee;
       p {
-        padding-top: 20px;
+        padding-top: 40px;
+        font-weight: 550;
         font-size: 14px;
       }
       .sign_up_btn {
@@ -42,6 +44,21 @@
         background-color: #ea352d;
         margin-bottom: 20px;
       }
+      .sign_up_btn2 {
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 4px;
+        margin: 16px 0 0;
+        color: #fff;
+        background-color: #3CCACE;
+        margin-bottom: 20px;
+      }
+
     }
     .login_form_inner {
       padding-bottom: 20px;
@@ -87,5 +104,41 @@
         color: #fff;
       }
     }
+  }
+}
+
+// ここからフッター
+.login_footer-main{
+  padding: 60px 0;
+  background-color: whitesmoke;
+  text-align: center;
+  &__toc{
+    max-width: 440px;
+    margin: 0 auto;
+    display: flex;
+    padding-bottom: 20px;
+    &__content{
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      a{
+        text-decoration: none;
+        font-size: 12px;
+        line-height: 32px;
+        font-weight: normal;
+      }
+    }
+  }
+  &__logo{
+    max-width: 160px;
+    width: 100%;
+    margin: 0 auto;
+    img{
+      width: 100%;
+      vertical-align: bottom;
+    }
+  }
+  p{
+    font-size: 14px;
   }
 }

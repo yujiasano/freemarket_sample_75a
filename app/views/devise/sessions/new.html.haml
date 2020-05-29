@@ -2,7 +2,7 @@
   .signin-header__contents
     .signin-header__contents__content
       %h1.signin-header__contents__content__logo
-        =link_to "#" do
+        =link_to root_path do
           = image_tag "logo.png", alt: "ロゴ"
 .login_form
   .signin_form
@@ -24,9 +24,8 @@
           Twitterでログイン
 
 
-    -# = form_with url:user_session_path, method: "POST" do |f|
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      = render "devise/shared/links"
+      =flash[:alert]
       .signin_form__group
         = f.email_field :email, {autofocus: true, autocomplete: "email", placeholder: "メールアドレス",class:'signin_form__group__input'}
       .signin_form__group
@@ -34,4 +33,6 @@
 
       .signin_form__group
         %p.signin_form__group__text--center
-        = f.submit '登録する', class: "btn-default btn-red", url: "#"
+        = f.submit 'ログインする', class: "btn-default btn-red", url: "#"
+  
+= render partial: 'home/new'

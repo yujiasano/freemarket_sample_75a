@@ -2,7 +2,7 @@
   .signin-header__contents
     .signin-header__contents__content
       %h1.signin-header__contents__content__logo
-        =link_to "#" do
+        =link_to root_path do
           = image_tag "logo.png", alt: "ロゴ"
 .login_form
   .signin_form
@@ -21,3 +21,6 @@
         = icon('fab', 'twitter',  class: "twitter_btn__icon")
         %span<>
           Twitterでログイン
+    
+= render partial: 'new'
+
