@@ -222,21 +222,37 @@ a{
 
 // コンテンツ
 .signin_form {
-  max-width: 340px;
+  max-width: 440px; // 変更
   margin: 0 auto;
   margin-top: 60px;
-  padding-bottom: 30px;
+  // padding-bottom: 30px;
+  background: #fff;
+  .new_user {
+    padding: 20px 50px;
+  }
+  .new_address {
+    padding: 20px 50px;
+  }
+  .new_profile {
+    padding: 20px 50px;
+  }
+  &__inner {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
   &__title {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
+    padding-top: 20px;
   }
   &__info {
     margin-top: 8px;
+    padding: 10px;
     color: rgb(105, 104, 104);
     line-height: 1.5;
   }
-
+  
   &__group {
     margin-top: 32px;
     label {
