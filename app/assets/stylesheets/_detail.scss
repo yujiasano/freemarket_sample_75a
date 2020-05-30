@@ -159,6 +159,10 @@ a{
     &__box{
       margin: 0 auto;
       width: 700px;
+      &__item{
+        background-color: white;
+        padding: 40px;
+      }
       &__item__name{
         background-color: #fff;
         padding: 24px 40px 40px;
