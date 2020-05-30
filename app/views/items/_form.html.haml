@@ -70,7 +70,10 @@
             必須
         .item-detail__inner__box
           .item-detail__inner__box__select
-            = f.collection_select :category_id, Category.all.limit(13), :id, :name,{prompt:"---"},{class:"", id: ""}
+            = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
+            .exhibitionPage__main__contents__detail__category__choose
+            -# ↓元々書いてあったコードをコメントアウトしました。確認取れ次第削除する
+            -# = f.collection_select :category_id, Category.all.limit(13), :id, :name,{prompt:"---"},{class:"", id: ""}
     .item-detail
       .item-detail__inner
         .item-detail__inner__name
