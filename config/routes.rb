@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'card/new'
+  get 'card/show'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -8,8 +10,6 @@ Rails.application.routes.draw do
     get 'profiles', to: 'users/registrations#new_profile'
     post 'profiles', to: 'users/registrations#create_profile'
   end
-
-
 
   root 'items#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
