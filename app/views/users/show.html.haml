@@ -2,7 +2,7 @@
   .header__contents
     .header__contents__content
       .header__contents__content__logo
-        =link_to "#" do
+        =link_to root_path do
           = image_tag "logo.png", alt: "ロゴ"
       .header__contents__content__search-box
         %form
@@ -128,8 +128,8 @@
             発送元・お届け先住所
             = icon('fas', 'chevron-right', class: 'mypage-icon')
         %li
-          =link_to "#", class: "main-contents__side-container__mypage-nav__config__li__a" do
-            クレジットカード情報
+          =link_to card_show_path, class: "main-contents__side-container__mypage-nav__config__li__a" do
+            クレジットカード情報確認/削除
             = icon('fas', 'chevron-right', class: 'mypage-icon')
         %li
           =link_to "#", class: "main-contents__side-container__mypage-nav__config__li__a" do

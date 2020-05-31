@@ -1,0 +1,86 @@
+.header-detail
+  .header-detail__contents
+    .header-detail__contents__content
+      %h1.header-detail__contents__content__logo
+        =link_to root_path do
+          = image_tag "logo.png", alt: "ロゴ"
+      .header-detail__contents__content__search-box
+        %form
+          %input.header-detail__contents__content__search-box__input{name: "", placeholder: "キーワードから探す", type:"", value: ""}/
+          %button{type: "submit"}
+            .header-detail__contents__content__search-box__icon
+              = image_tag "icon-search 1.png", alt: "ロゴ"
+    .header-detail__contents__nav-list
+      .header-detail__contents__nav-list__left
+        %ul
+          .header-detail__contents__nav-list__left__category
+            %li
+              =link_to "#" do
+                カテゴリー
+          .header-detail__contents__nav-list__left__brand
+            %li
+              =link_to "#" do
+                ブランド
+      .header-detail__contents__nav-list__right
+        %ul
+          .header-detail__contents__nav-list__right__login
+            %li
+              =link_to "#" do
+                ログイン
+          .header-detail__contents__nav-list__right__new
+            %li
+              =link_to "#" do
+                新規登録
+%nav.nav-detail
+  %ul.nav-detail__ul
+    .nav-detail__ul__li
+      %li
+        .nav-detail__ul__li__link
+          =link_to "#" do
+            FURIMA
+    .nav-detail__ul__li
+      %li
+        .nav-detail__ul__li__link
+          =link_to "#" do
+            = icon('fas', 'angle-right', class: 'icon')
+    .nav-detail__ul__li
+      %li
+        .nav-detail__ul__li__link
+          =link_to "#" do
+            商品ページ
+    .nav-detail__ul__li
+      %li
+        .nav-detail__ul__li__link
+          =link_to "#" do
+            = icon('fas', 'angle-right', class: 'icon')
+    .nav-detail__ul__li
+      %li
+        .nav-detail__ul__li__link
+          =link_to "#" do
+            購入確認
+    .nav-detail__ul__li
+      %li
+        .nav-detail__ul__li__link
+          =link_to "#" do
+            = icon('fas', 'angle-right', class: 'icon')
+    .nav-detail__ul__li
+      %li
+        .nav-detail__ul__li__link
+          =link_to "#" do
+            購入完了
+
+.pur-finish
+  .pur-finish__main
+    .pur-finish__main__box
+      %h2.pur-finish__main__box__h2 商品購入完了しました。
+      .pur-finish__main__box__img
+        =image_tag(@item.images[0].image.url,class:"buy-image")
+      %br
+      = @item.name
+      %br
+      ¥
+      = @item.price
+      %br
+      .pur-finish__main__box__link
+        = link_to root_path, class:"pur-finish__main__box__link__a" do
+          トップページへ戻る
