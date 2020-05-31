@@ -35,12 +35,24 @@
         
 
 
-.bread-crumbs
-  %ul.bread-crumbs__nav
-    %li.bread-crumbs__nav__li
-      =link_to "#" do
-        メルカリ
-    
+%nav.nav-detail
+  %ul.nav-detail__ul
+    .nav-detail__ul__li
+      %li
+        .nav-detail__ul__li__link
+          =link_to "#" do
+            FURIMA
+    .nav-detail__ul__li
+      %li
+        .nav-detail__ul__li__link
+          =link_to "#" do
+            = icon('fas', 'angle-right', class: 'icon')
+    .nav-detail__ul__li
+      %li
+        .nav-detail__ul__li__link
+          =link_to "#" do
+            マイページ
+
 
 
 .main-contents
@@ -128,7 +140,7 @@
             発送元・お届け先住所
             = icon('fas', 'chevron-right', class: 'mypage-icon')
         %li
-          =link_to card_show_path, class: "main-contents__side-container__mypage-nav__config__li__a" do
+          =link_to new_card_path, class: "main-contents__side-container__mypage-nav__config__li__a" do
             クレジットカード情報確認/削除
             = icon('fas', 'chevron-right', class: 'mypage-icon')
         %li
@@ -153,7 +165,7 @@
         %figure.main-contents__container__icon__a__figure
           = image_tag "member_photo_noimage_thumb.png", alt: "ロゴ"
         %h2.main-contents__container__icon__a__h2
-          白石 麻衣
+          = current_user.nickname
         .main-contents__container__icon__a__number
           .main-contents__container__icon__a__number__value
             評価
@@ -292,7 +304,7 @@
       = image_tag "logo-white.png", alt: "ロゴ"
   %p
     © FURIMA
-=link_to "#" do
+=link_to new_item_path do
   .listing-btn
     %span 出品する
     = image_tag "syuppin.svg", alt: "ロゴ"
