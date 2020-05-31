@@ -5,7 +5,6 @@ class PurchasesController < ApplicationController
 
   def index
     card = Card.where(user_id: current_user.id).first
-    @user = current_user
     @address = Address.where(user_id: current_user.id).first
     @profile = Profile.find(current_user.id)
     
