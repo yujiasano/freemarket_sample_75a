@@ -11,10 +11,6 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
     get 'profiles', to: 'users/registrations#new_profile'
     post 'profiles', to: 'users/registrations#create_profile'
-
-
-
-
   end
 
 
@@ -24,7 +20,13 @@ Rails.application.routes.draw do
   resources :home, only: [:index, :new]
   resources :users, only: [:show]
   resources :items do
-    resources :purchases, only: [:index]
+    resources :purchase, only: [:index] do
+      collection do
+        get 'index', to: 'purchases#index'
+        post 'pay', to: 'purchases#pay'
+        get 'done', to: 'purchases#done'
+      end
+    end
   end
   resources :profiles, only: [:new, :show, :create]
   resources :addresses, only: [:new]
