@@ -1,13 +1,14 @@
 class PurchasesController < ApplicationController
+  before_action :set_item, only: [:index, :pay, :done]
+
   require 'payjp'
 
   def index
-    
     card = Card.where(user_id: current_user.id).first
     @user = current_user
     @address = Address.where(user_id: current_user.id).first
     @profile = Profile.find(current_user.id)
-    @item = Item.find(params[:item_id])
+    
   
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
@@ -23,28 +24,29 @@ class PurchasesController < ApplicationController
   end
 
   def pay
-    @item = Item.find(params[:item_id])
-    @item.update(buyer_id: current_user.id)
-    @item.update(trading_status: "売り切れ")
-  
-    card = Card.where(user_id: current_user.id).first
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-    Payjp::Charge.create(
-    amount: @item.price,
-    customer: card.customer_id, #顧客ID
-    currency: 'jpy', #日本円
-    )
-   
-    redirect_to action: 'done' #完了画面に移動
-    
+    if @item.update(buyer_id: current_user.id, trading_status: "売り切れ")
+      card = Card.where(user_id: current_user.id).first
+      Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+      Payjp::Charge.create(
+      amount: @item.price,
+      customer: card.customer_id, #顧客ID
+      currency: 'jpy', #日本円
+      )
+      redirect_to action: 'done' #完了画面に移動
+    else
+      redirect_to action: 'index' #再度購入画面へ
+    end
   end
 
   def done
-    @item = Item.find(params[:item_id])
-
     card = Card.find_by(user_id: current_user.id)
     customer = Payjp::Customer.retrieve(card.customer_id)
     @default_card_information = customer.cards.retrieve(card.card_id)
   end
+
+  private
+    def set_item
+      @item = Item.find(params[:item_id])
+    end
 end
 
