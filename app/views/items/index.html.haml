@@ -142,7 +142,7 @@
         - @items.each do |item|
           =link_to "/products/3" do
             .main__picture__box__lists__list__description--image
-              =image_tag "#{Image.find(item.image_id).image.to_s}"
+              -# =image_tag "#{Image.find(item.image_id).image.to_s}"
                 -if item.buyer_id.present? 
                 .item__box__picture__sold
                   .item__box__picture__sold__inner SOLD OUT
@@ -169,7 +169,7 @@
           =link_to "/products/3" do
             .main__picture__box__lists__list__description--image
               
-              =image_tag "#{Image.find(item.image_id).image.to_s}"
+              -# =image_tag "#{Image.find(item.image_id).image.to_s}"
                 -if item.buyer_id.present? 
                 .item__box__picture__sold
                   .item__box__picture__sold__inner SOLD OUT
@@ -229,6 +229,7 @@
       =image_tag "logo-white.png"
     %P © FURIMA
 =link_to new_item_path do
+
   .purchaseBtn
     %span.purchaseBtn__text 出品する
     =image_tag "icon_camera.png"

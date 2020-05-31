@@ -54,6 +54,7 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(item_params)
+    
     respond_to do |format|
       # 商品の詳細が保存された場合
       if @item.save
@@ -110,7 +111,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :description, :status, :size, :trading_status, :delivery_area, :delivery_days, :delivery_burden, :brand_id, :category_id, images_attributes: [:image])
+    params.require(:item).permit(:name, :price, :description, :status, :size, :trading_status, :delivery_area, :delivery_days, :delivery_burden, :brand_id, :category_id, :user_id, images_attributes: [:image])
   end
   
 
