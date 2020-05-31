@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   root 'items#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :home, only: [:index, :new]
+  resources :home, only: [:index, :new, :edit]
   resources :users, only: [:show]
   resources :items do
     collection do

@@ -32,7 +32,7 @@
     .signin_form__group
       = f.label :都道府県
       .signin_form__group__require 必須
-      = f.select :prefecture, Address.prefectures.keys, {}, {autofocus: true, placeholder: "例）123-4567", class: 'signin_form__group__input'}
+      = f.select :prefecture, Address.prefectures.keys, {prompt:"---"}, {autofocus: true, placeholder: "例）123-4567", class: 'signin_form__group__input'}
     .signin_form__group
       = f.label :市町村
       .signin_form__group__require 必須
