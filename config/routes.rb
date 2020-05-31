@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-  
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -9,10 +7,6 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
     get 'profiles', to: 'users/registrations#new_profile'
     post 'profiles', to: 'users/registrations#create_profile'
-
-
-
-
   end
 
 
@@ -22,13 +16,25 @@ Rails.application.routes.draw do
   resources :home, only: [:index, :new]
   resources :users, only: [:show]
   resources :items do
+    resources :purchase, only: [:index] do
+      collection do
+        get 'index', to: 'purchases#index'
+        post 'pay', to: 'purchases#pay'
+        get 'done', to: 'purchases#done'
+      end
+    end
     collection do
       get 'category/get_category_children', to: 'items#get_category_children', defaults: { format: 'json' }
        get 'category/get_category_grandchildren', to: 'items#get_category_grandchildren', defaults: { format: 'json' }
     end
-    resources :purchases, only: [:index]
   end
   resources :profiles, only: [:new, :show, :create]
   resources :addresses, only: [:new]
-  
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+  end
 end
