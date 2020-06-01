@@ -1,12 +1,5 @@
 FactoryBot.define do
 
-  factory :user do
-    nickname                    {"sasa"}
-    email                       {"kkk@gmail.com"}
-    password                    {"00000000"}
-    encrypted_password          {"00000000"}
-  end
-
   factory :category do
     name                        {"レディース"}
   end
