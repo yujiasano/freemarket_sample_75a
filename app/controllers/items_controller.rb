@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
+    
   end
 
   
@@ -120,6 +121,9 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find_by(id: params[:id])
+
+    
   end
 
   private
