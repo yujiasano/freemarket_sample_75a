@@ -107,8 +107,8 @@
               %span
                 送料込み
           - if user_signed_in? && current_user.id == @item.user_id
-            = link_to "この商品を削除する",item_path(@item.id), method: :delete, data: {confirm: "削除すると二度と復活できません、本当に削除しますか？"}, class: "contents-main__main__box__item__name__next"  
-            = link_to "この商品を編集する",edit_item_path(@item.id),   class: "contents-main__main__box__item__name__next"  
+            = link_to "この商品を削除する",item_path(@item.id), method: :delete, data: {confirm: "削除すると二度と復活できません、本当に削除しますか？"}, class: "contents-main__main__box__item__name__delete"  
+            = link_to "この商品を編集する",edit_item_path(@item.id),   class: "contents-main__main__box__item__name__edit"  
           - elsif @item.buyer_id == nil
             = link_to item_purchase_index_path(@item), class: "contents-main__main__box__item__name__next" do
               購入画面に進む
