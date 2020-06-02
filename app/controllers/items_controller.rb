@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:destroy, :show]
+  before_action :set_item, only: [:destroy, :show, :edit, :update]
 
   def index
     @items = Item.all
@@ -49,12 +49,15 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.images.build()
-
-    @category_parent_array = ["---"]
-    @category_parent_array = Category.where(ancestry: nil)
-
+    @images = @item.images.build
   end
+
+  def create
+    @item = Item.new(item_params)
+    @item.save
+    redirect_to root_path
+  end
+
 
 
   def get_category_children
@@ -66,35 +69,19 @@ class ItemsController < ApplicationController
   end
 
   
-  def create
-    @item = Item.new(item_params)
-    
-    respond_to do |format|
-      # 商品の詳細が保存された場合
-      if @item.save
-        params[:item_images][:image].each do |image|
-          @item.images.create(image: image, item_id: @item.id)
-        end
-        format.html{redirect_to root_path}
-      else
-        # 商品の詳細が保存されなかった場合
-        @item.images.build
-        format.html{render action: 'new'}
-      end
-    end
-  end
   
   
   
   
   
   def edit
-  
   end
   
   
   def update
+    @item.update(item_update_params)
   end
+
   
   
   
@@ -132,6 +119,11 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def item_update_params
+    params.require(:item).permit(
+      :name, :price, :description, :status, :size, :trading_status, :delivery_area, :delivery_days, :delivery_burden, :brand_id, :category_id, :user_id, [images_attributes: [:image, :_destroy, :id]])
   end
 
 end
