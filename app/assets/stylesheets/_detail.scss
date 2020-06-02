@@ -184,6 +184,30 @@ a{
           touch-action: manipulation;
           margin-bottom: 40px;
         }
+        &__edit{
+          font-size: 24px;
+          line-height: 60px;
+          display: block;
+          background: #d3d3d3;
+          color: #fff;
+          text-align: center;
+          font-weight: 600;
+          transition: all ease-out .3s;
+          touch-action: manipulation;
+        }
+        &__delete{
+          font-size: 24px;
+          line-height: 60px;
+          display: block;
+          margin-top: 16px;
+          margin-bottom: 20px;
+          background: #ea352d;
+          color: #fff;
+          text-align: center;
+          font-weight: 600;
+          transition: all ease-out .3s;
+          touch-action: manipulation;
+        }
       }
       &__item__image{
         margin: 16px 0 0;
