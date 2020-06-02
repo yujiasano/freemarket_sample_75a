@@ -75,9 +75,8 @@ $(function(){
       if ($(`#preview-box__${id}`).length == 0) {
         var count = $('.preview-box').length;
         var html = buildHTML(id);
-        //ラベルの直前のプレビュー群にプレビューを追加
-        var prevContent = $('.label-content').prev();
-        $(prevContent).append(html);
+
+        $('.label-content').before(html)
       }
       //イメージを追加
       $(`#preview-box__${id} img`).attr('src', `${image}`);

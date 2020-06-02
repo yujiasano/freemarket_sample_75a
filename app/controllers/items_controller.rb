@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
  
 
 
-  before_action :set_item, only: [:destroy, :show, :edit, :update]
+
 
 
   def index
@@ -62,8 +62,12 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.save
-    redirect_to root_path
+    if @item.save
+      redirect_to root_path
+    else
+      @item.images.build
+      render action: :new
+    end
   end
 
 
@@ -83,28 +87,15 @@ class ItemsController < ApplicationController
   
   
   def edit
-
-
-    
-   
-  
-    
-
-
   end
   
   
   def update
-
-
-   
-    
-
-    @item.update(item_update_params)
-
-
-    @item.update(item_update_params)
-
+    if @item.update(item_update_params)
+      redirect_to root_path
+    else
+      render action: :edit
+    end
   end
 
   
@@ -138,8 +129,8 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :description, :status, :size, :trading_status, :delivery_area, :delivery_days, :delivery_burden, :brand_id, :category_id, :user_id, images_attributes: [:image_url])
-    
+    params.require(:item).permit(:name, :price, :description, :status, :size, :trading_status, :delivery_area, :delivery_days, :delivery_burden, :brand_id, :category_id, :user_id, images_attributes: [:image])
+  end
 
   
   def set_item
@@ -148,16 +139,9 @@ class ItemsController < ApplicationController
   end
 
   def item_update_params
-    params.require(:item).permit(
-      :name, :price, :description, :status, :size, :trading_status, :delivery_area, :delivery_days, :delivery_burden, :brand_id, :category_id, :user_id, [images_attributes: [:image, :_destroy, :id]])
+    params.require(:item).permit(:name, :price, :description, :status, :size, :trading_status, :delivery_area, :delivery_days, :delivery_burden, :brand_id, :category_id, :user_id, [images_attributes: [:image, :_destroy, :id]])
   end
 
-  def item_update_params
-    params.require(:item).permit(
-      :name, :price, :description, :status, :size, :trading_status, :delivery_area, :delivery_days, :delivery_burden, :brand_id, :category_id, :user_id, [images_attributes: [:image, :_destroy, :id]])
-  end
 
-end
 
-end
 end

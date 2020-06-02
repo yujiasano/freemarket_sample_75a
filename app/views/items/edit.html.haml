@@ -4,19 +4,7 @@
       =link_to root_path do
         = image_tag "logo.png", alt: "ロゴ"
     .content-sale__main
-
       .content-sale__main__box 
-        - @item.images.each do |image|
-          .preview-box
-            .upper-box
-              = image_tag image.image_url width: "112", height: "112", alt: "preview"
-            .label-content
-
-                
-        
-         
-
-      .content-sale__main__box
         = form_with model:@item, local:true do |f|
           - if @item.errors.any?
             .error_explanation
@@ -39,17 +27,14 @@
             %p.discription 最大10枚までアップロードできます
             
             .post__drop__box__container
-              .prev-content
-
-                //JSで挿入したhtmlと同じ形each文でのプレビュー表示
-                - @item.images.each do |image|
-                  .preview-box
-                    .upper-box
-                      = image_tag image.image.url, width: "112", height: "112", alt: "preview"
-                    .lower-box
-                      .delete-box
-                        .delete-btn
-                          %span 削除
+              - @item.images.each do |image|
+                .preview-box
+                  .upper-box
+                    = image_tag image.image.url, width: "112", height: "112", alt: "preview"
+                  .lower-box
+                    .delete-box
+                      .delete-btn
+                        %span 削除
               .label-content
                 = f.label :"images_attributes_#{@item.images.length}_image", class: "label-box", id: "label-box--#{@item.images.length}" do
                   %pre.label-box__text-visible クリックしてファイルをアップロード
@@ -191,7 +176,7 @@
               %span
                 #revenue
           .btn
-            =f.submit "出品する",class:"btn__listing"
+            =f.submit "商品情報を更新する",class:"btn__listing"
             =link_to "もどる",items_path
           .warning
             %p

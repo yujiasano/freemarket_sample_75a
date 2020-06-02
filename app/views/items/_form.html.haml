@@ -1,4 +1,4 @@
-= form_for @item , html: {id: "item-dropzone"} do |f|
+= form_with model:@item, local:true do |f|
   
   -# エラーメッセージ
   - if @item.errors.any?
