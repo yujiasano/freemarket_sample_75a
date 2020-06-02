@@ -1,8 +1,12 @@
 class ItemsController < ApplicationController
 
+
   before_action :set_item, only: [:destroy, :show,:edit,:update]
 
  
+
+
+  before_action :set_item, only: [:destroy, :show, :edit, :update]
 
 
   def index
@@ -79,19 +83,25 @@ class ItemsController < ApplicationController
   
   
   def edit
-D
+
+
     
    
-    @images = @item.images
+  
     
+
 
   end
   
   
   def update
 
+
    
     
+
+    @item.update(item_update_params)
+
 
     @item.update(item_update_params)
 
@@ -135,6 +145,11 @@ D
   def set_item
     # @item = Item.find(params[:id])
     @item = Item.includes(:images).find(params[:id])
+  end
+
+  def item_update_params
+    params.require(:item).permit(
+      :name, :price, :description, :status, :size, :trading_status, :delivery_area, :delivery_days, :delivery_burden, :brand_id, :category_id, :user_id, [images_attributes: [:image, :_destroy, :id]])
   end
 
   def item_update_params
