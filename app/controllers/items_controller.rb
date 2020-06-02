@@ -8,7 +8,6 @@ class ItemsController < ApplicationController
 
 
 
-
   def index
     @items = Item.all
   end
@@ -130,6 +129,7 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :price, :description, :status, :size, :trading_status, :delivery_area, :delivery_days, :delivery_burden, :brand_id, :category_id, :user_id, images_attributes: [:image])
+
   end
 
   
@@ -141,7 +141,5 @@ class ItemsController < ApplicationController
   def item_update_params
     params.require(:item).permit(:name, :price, :description, :status, :size, :trading_status, :delivery_area, :delivery_days, :delivery_burden, :brand_id, :category_id, :user_id, [images_attributes: [:image, :_destroy, :id]])
   end
-
-
-
 end
+

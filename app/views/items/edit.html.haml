@@ -162,7 +162,8 @@
                   ¥
                 .price__box__input
                   .price__box__input__inner
-                    = f.number_field :price, min:300, max:9999999, class: "input", id: "sell-price", placeholder: "例）300", value: ""
+                    = f.number_field :price, min:300, max:9999999, class: "input",id:  "sell-price", placeholder: "例）300", sum: ""
+                   
               .price__box__fee
                 .price__box__fee__inner
                   .price__box__fee__inner__title
