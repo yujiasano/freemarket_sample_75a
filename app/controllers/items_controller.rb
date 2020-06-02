@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-
+  before_action :move_to_index, only: [:new, :edit, :update]
 
   before_action :set_item, only: [:destroy, :show,:edit,:update]
 
@@ -140,6 +140,10 @@ class ItemsController < ApplicationController
 
   def item_update_params
     params.require(:item).permit(:name, :price, :description, :status, :size, :trading_status, :delivery_area, :delivery_days, :delivery_burden, :brand_id, :category_id, :user_id, [images_attributes: [:image, :_destroy, :id]])
+  end
+
+  def move_to_index
+    redirect_to new_user_session_path unless user_signed_in?
   end
 end
 
