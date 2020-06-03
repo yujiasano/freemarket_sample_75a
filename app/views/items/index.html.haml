@@ -6,7 +6,11 @@
           =image_tag "logo.png",alt: "ロゴ"
       .header__contents__content__search-box
         %form
+
+        
+
           %input.header__contents__content__search-box__input{:name => "",:placeholder => "キーワードから探す", :type =>"", :value => ""}/
+
           %button{type: "submit"}
             .header__contents__content__search-box__icon
               =image_tag "icon-search 1.png",alt: "ロゴ"
@@ -260,6 +264,9 @@
     .main__picture__box__lists
 
       .main__picture__box__lists__list
+
+        - @items.each do |item|
+
         =link_to "/items/1" do
           .main__picture__box__lists__list__description--image
             =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
@@ -351,6 +358,7 @@
 
       .main__picture__box__lists__list 
         -@items.each do |item|
+
           =link_to "/items/1" do
             .main__picture__box__lists__list__description--image
               =image_tag "#{Image.find(item.image_id).image.to_s}"
