@@ -15,9 +15,10 @@
         %ul
           .header__contents__nav-list__left__category
             %li.header__contents__nav-list__left__category__li
-              =link_to "#" do
-                カテゴリー
-               
+              = icon("fas", "bars")
+              =link_to categories_path, class: "categories" do
+                カテゴリーから探す
+              = render partial: 'home/categories_drop'
           .header__contents__nav-list__left__brand
             %li.header__contents__nav-list__left__brand__li
               =link_to "#" do
