@@ -12,6 +12,9 @@ class Address < ApplicationRecord
     福岡県:"福岡県",佐賀県:"佐賀県",長崎県:"長崎県",熊本県:"熊本県",大分県:"大分県",宮崎県:"宮崎県",鹿児島県:"鹿児島県",沖縄県:"沖縄県"
 
   }
-  validates :postal_code, :prefecture, :municipalities, :address, presence: true
+  validates :prefecture, :municipalities, :address, presence: true
+  validates :postal_code, format: {with: /\A\d{3}[-]\d{4}$|^\d{3}[-]\d{2}$|^\d{3}$|^\d{5}$|^\d{7}\z/}
+  # validates :postal_code, numericality: { only_integer: true }
+
   belongs_to :user, optional: true
 end

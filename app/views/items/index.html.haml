@@ -15,9 +15,10 @@
         %ul
           .header__contents__nav-list__left__category
             %li.header__contents__nav-list__left__category__li
-              =link_to "#" do
-                カテゴリー
-               
+              = icon("fas", "bars")
+              =link_to categories_path, class: "categories" do
+                カテゴリーから探す
+              = render partial: 'home/categories_drop'
           .header__contents__nav-list__left__brand
             %li.header__contents__nav-list__left__brand__li
               =link_to "#" do
@@ -43,7 +44,7 @@
             .header__contens__nav-list__right__new
               %li.header__contens__nav-list__right__new__li
                 =link_to home_index_path do
-                  新規登録      
+                  新規登録       
 
 .main
   .main__contents
@@ -224,6 +225,32 @@
                 %i.fa.fa-star 
                   0          
 
+-# .main__picture
+-#   %h2.main__picture__header ピックアップカテゴリー
+-#   .main__picture__box
+-#     .main__picture__box__head
+-#       =link_to "#"do
+-#         %h3 新規投稿商品
+-#     .main__picture__box__lists
+-#       .main__picture__box__lists__list
+-#         - @items.each do |item|
+-#           =link_to "/products/1" do
+-#             .main__picture__box__lists__list__description--image
+-#               =image_tag "#{Image.find(item.image_id).image.to_s}"
+-#                 -if item.buyer_id.present? 
+-#                 .item__box__picture__sold
+-#                   .item__box__picture__sold__inner SOLD OUT
+              
+-#             .main__picture__box__lists__list__productList--body
+-#               =item.name
+-#             .main__picture__box__lists__list__productList--details
+-#               %ul
+-#                 %li 
+-#                   ="#{item.price}円"
+-#                   %P (税込)
+-#                 %i.fa.fa-star 
+-#                   0
+              
 .main__picture
   %h2.main__picture__header ピックアップブランド
   .main__picture__box
@@ -299,14 +326,18 @@
               %i.fa.fa-star 
               0
             %P (税込)
+        -# こちらは今後使用するため今だけコメントアウト
+        
         -# - @items.each do |item|
         -#   =link_to "/items/1" do
         -#     .main__picture__box__lists__list__description--image
+
+
               
-        -#       -# =image_tag "#{Image.find(item.image_id).image.to_s}"
-        -#         -if item.buyer_id.present? 
-        -#         .item__box__picture__sold
-        -#           .item__box__picture__sold__inner SOLD OUT
+            -#  =image_tag "#{Image.find(item.image_id).image.to_s}"
+                -# -if item.buyer_id.present? 
+                -# .item__box__picture__sold
+                -#   .item__box__picture__sold__inner SOLD OUT
                
         -#     .main__picture__box__lists__list__productList--body 
         -#       =item.name
@@ -327,7 +358,9 @@
                 .item__box__picture__sold
                   .item__box__picture__sold__inner SOLD OUT
             .main__picture__box__lists__list__productList--body
-              =item.name
+              =item.nam
+           -# .main__picture__box__lists__list__productList--body 
+              -# =item.name
             .main__picture__box__lists__list__productList--details
               %ul
                 %li 
@@ -335,6 +368,8 @@
                   %P (税込)
                 %i.fa.fa-star 
 
+
+                  0
 .banner
   .banner__inner
     %h2.banner__inner__title だれでもかんたん、人生を変えるフリマアプリ
@@ -380,8 +415,7 @@
     =link_to "#" do
       =image_tag "logo-white.png"
     %P © FURIMA
-=link_to new_item_path do
-
+=link_to "#" do
   .purchaseBtn
     %span.purchaseBtn__text 出品する
     =image_tag "icon_camera.png"
