@@ -350,4 +350,11 @@ a{
       border-radius: 4px;
     }
   }
+  // .field_with_errors {
+  //   display: flex;
+  // }
+  .field_with_errors {
+    display: contents;
+    // もしくは diplay: inline;
+  }
 }

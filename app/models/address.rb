@@ -14,7 +14,7 @@ class Address < ApplicationRecord
   }
   validates :prefecture, :municipalities, :address, presence: true
   validates :postal_code, format: {with: /\A\d{3}[-]\d{4}$|^\d{3}[-]\d{2}$|^\d{3}$|^\d{5}$|^\d{7}\z/}
-  # validates :postal_code, numericality: { only_integer: true }
+  
 
   belongs_to :user, optional: true
 end
