@@ -188,25 +188,26 @@ $(function(){
       if (count == 9) {
         $('.label-content').show();
       }
+
       //ラベルのwidth操作
       if (count == 1) { 
-        $('.label-content').css('width', '620px');
+        $('.label-content').css('width', '491px');
       } else if (count == 2) {
-        $('.label-content').css('width', '491px');
+        $('.label-content').css('width', '363px');
       } else if (count == 3) {
-        $('.label-content').css('width', '363px');
+        $('.label-content').css('width', '234px');
       } else if (count == 4) {
-        $('.label-content').css('width', '234px');
-      } else if (count == 5) {
         $('.label-content').css('width', '106px');
-      } else if (count == 6) {
+      } else if (count == 5) {
         $('.label-content').css('width', '620px');
-      } else if (count == 7) {
+      } else if (count == 6) {
         $('.label-content').css('width', '491px');
-      } else if (count == 8) {
+      } else if (count == 7) {
         $('.label-content').css('width', '363px');
-      } else if (count == 9) {
+      } else if (count == 8) {
         $('.label-content').css('width', '234px');
+      } else if (count == 9) {
+        $('.label-content').css('width', '106px');
       } else if (count == 10) { 
         $('.label-content').hide();
       }
@@ -217,20 +218,4 @@ $(function(){
       }
     }
   });
-
-
-  //価格表示
-  $('#sell-price').on('input', function(){
-    var data = $('#sell-price').val();
-    var profit = Math.round(data * 0.9)
-    var fee = (data - profit)
-    $('#furima_fee').html(fee)
-    $('#furima_fee').prepend('¥')
-    $('#revenue').html(profit)
-    $('#revenue').prepend('¥')
-    if(profit == '') {
-    $('#revenue').html('');
-    $('#furima_fee').html('');
-    }
-  })
 });

@@ -1,12 +1,13 @@
 class PurchasesController < ApplicationController
   before_action :set_item, only: [:index, :pay, :done]
+  before_action :set_card, only: [:index, :pay]
 
   require 'payjp'
 
   def index
     @address = Address.where(user_id: current_user.id).first
     @profile = Profile.find(current_user.id)
-    card = Card.where(user_id: current_user.id).first
+    
   
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
@@ -23,7 +24,6 @@ class PurchasesController < ApplicationController
 
   def pay
     if @item.update(buyer_id: current_user.id, trading_status: "売り切れ")
-      card = Card.where(user_id: current_user.id).first
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
       Payjp::Charge.create(
       amount: @item.price,
@@ -45,6 +45,9 @@ class PurchasesController < ApplicationController
   private
     def set_item
       @item = Item.find(params[:item_id])
+    end
+    def set_item
+      card = Card.where(user_id: current_user.id).first
     end
 end
 

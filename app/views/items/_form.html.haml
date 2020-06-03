@@ -24,7 +24,6 @@
     .post__drop__box__container
       .label-content
         %label{for: "item_images_attributes_0_image", class: "label-box", id: "label-box--0"}
-          = icon('fas', 'camera', class: 'label-content__icon')
           %pre.label-box__text-visible クリックしてファイルをアップロード
       .hidden-content
         = f.fields_for :images do |i|
@@ -49,7 +48,7 @@
           必須
       .content-sale__main__box__form__item__box
         .content-sale__main__box__form__item__box__input
-          = f.text_field :name, placeholder:"商品名（必須 40文字以内)",class: "input"
+          = f.text_field :name, placeholder:"商品名（必須 40文字まで)",class: "input"
 
     .content-sale__main__box__form__intro
       .content-sale__main__box__form__inner__title
@@ -156,7 +155,7 @@
           ¥
         .price__box__input
           .price__box__input__inner
-            = f.number_field :price, min:300, max:9999999, class: "input", id: "sell-price", placeholder: "例）300（半角）", value: ""
+            = f.number_field :price, min:300, max:9999999, class: "input", id: "sell-price", placeholder: "例）300", value: ""
       .price__box__fee
         .price__box__fee__inner
           .price__box__fee__inner__title
