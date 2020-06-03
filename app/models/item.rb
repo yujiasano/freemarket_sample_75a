@@ -6,7 +6,11 @@ class Item < ApplicationRecord
   belongs_to :category, optional: true
   accepts_nested_attributes_for :images, allow_destroy: true
 
-  validates :name, :description, :price, :status, :trading_status, :delivery_area, :delivery_days, :delivery_burden, :category_id, presence: true
+  validates :status, :trading_status, :delivery_area, :delivery_days, :delivery_burden, :category_id, presence: true
+
+  validates :name, presence: true, length: { maximum: 40 }
+  validates :description, presence: true, length: { maximum: 1000 }
+  validates :price, numericality: { only_integer: true }
 
   enum status:{
     新品、未使用:"新品、未使用",目立った傷や汚れなし:"目立った傷や汚れなし",目立った傷や汚れあり:"目立った傷や汚れあり",全体的に状態が悪い:"全体的に状態が悪い"
