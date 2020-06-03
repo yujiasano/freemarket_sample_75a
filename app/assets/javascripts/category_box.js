@@ -8,7 +8,6 @@ $(document).ready(function(){
       var childSelectHtml = '';
       childSelectHtml = `<div class='exhibitionPage__main__contents__detail__category__choose__added' id= 'children_wrapper'>
                           <div class='exhibitionPage__main__contents__detail__category__choose1'>
-                            <i class='fas fa-chevron-down exhibitionPage__main__contents__detail__category__choose--arrow-down'></i>
                             <select class="exhibitionPage__main__contents__detail__category__choose--select" id="child_category" name="item[category_id]">
                               <option value="---" data-category="---">---</option>
                               ${insertHTML}
@@ -22,7 +21,6 @@ $(document).ready(function(){
       var grandchildSelectHtml = '';
       grandchildSelectHtml = `<div class='exhibitionPage__main__contents__detail__category__choose__added' id= 'grandchildren_wrapper'>
                                 <div class='exhibitionPage__main__contents__detail__category__choose2'>
-                                  <i class='fas fa-chevron-down exhibitionPage__main__contents__detail__category__choose--arrow-down'></i>
                                   <select class="exhibitionPage__main__contents__detail__category__choose__box--select" id="grandchild_category" name="item[category_id]">
                                     <option value="---" data-category="---">---</option>
                                     ${insertHTML}
@@ -52,7 +50,7 @@ $(document).ready(function(){
           appendChidrenBox(insertHTML);
         })
         .fail(function(){
-          alert('カテゴリー取得に失敗しました');
+          alert('カテゴリーを選択してください');
         })
       }else{
         $('#children_wrapper').remove(); 
@@ -80,7 +78,7 @@ $(document).ready(function(){
           }
         })
         .fail(function(){
-          alert('カテゴリー取得に失敗しました');
+          alert('カテゴリーを選択してください');
         })
       }else{
         $('#grandchildren_wrapper').remove(); 
