@@ -1,4 +1,4 @@
-= form_for @item , html: {id: "item-dropzone"} do |f|
+= form_with model:@item, local:true do |f|
   
   -# エラーメッセージ
   - if @item.errors.any?
@@ -21,18 +21,22 @@
       %span.upload-box__head__span 必須
     %p.discription 最大10枚までアップロードできます
 
-    #image-box-1
-      .item-num-0#image-box__container
-        = f.fields_for :images do |image|
-          .content-sale__main__box__form__inner__input
-            .content-sale__main__box__form__inner__input__inner#border-line
-              = image.file_field :image, multiple: true, required: true, name: 'item_images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0, type: 'file', style: "display:none"
-              %label{for: "upload-image"}
-                = icon('fas', 'camera', class: 'icon')
-                %p
-                  ドラッグアンドドロップ
-                  %br
-                  またはクリックしてファイルをアップロード
+    .post__drop__box__container
+      .label-content
+        %label{for: "item_images_attributes_0_image", class: "label-box", id: "label-box--0"}
+          %pre.label-box__text-visible クリックしてファイルをアップロード
+      .hidden-content
+        = f.fields_for :images do |i|
+          = i.file_field :image, class: "hidden-field", required: true
+          %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
+          %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
+          %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
+          %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
+          %input{class:"hidden-field", type: "file", name: "item[images_attributes][5][image]", id: "item_images_attributes_5_image" }
+          %input{class:"hidden-field", type: "file", name: "item[images_attributes][6][image]", id: "item_images_attributes_6_image" }
+          %input{class:"hidden-field", type: "file", name: "item[images_attributes][7][image]", id: "item_images_attributes_7_image" }
+          %input{class:"hidden-field", type: "file", name: "item[images_attributes][8][image]", id: "item_images_attributes_8_image" }
+          %input{class:"hidden-field", type: "file", name: "item[images_attributes][9][image]", id: "item_images_attributes_9_image" }
 
   %hr.content-sale--hr
   .content-sale__main__box__form
