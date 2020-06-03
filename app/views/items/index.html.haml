@@ -6,7 +6,7 @@
           =image_tag "logo.png",alt: "ロゴ"
       .header__contents__content__search-box
         %form
-          %input.header__contents__content__search-box__input{:name => "",:placeholder => "キーワード検索", :type =>"", :value => ""}/
+          %input.header__contents__content__search-box__input{:name => "",:placeholder => "キーワードから検索", :type =>"", :value => ""}/
           %button{type: "submit"}
             .header__contents__content__search-box__icon
               =image_tag "icon-search 1.png",alt: "ロゴ"
@@ -140,7 +140,7 @@
     .main__picture__box__lists
       .main__picture__box__lists__list
         - @items.each do |item|
-          =link_to "/products/1" do
+          =link_to "/items/1" do
             .main__picture__box__lists__list__description--image
               =image_tag "#{Image.find(item.image_id).image.to_s}"
                 -if item.buyer_id.present? 
@@ -165,84 +165,9 @@
         %h3 アーカイバ
     .main__picture__box__lists
       .main__picture__box__lists__list
-<<<<<<< Updated upstream
-        =link_to "/items/1" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
-            .item__box__picture__sold
-              .item__box__picture__sold__inner SOLD OUT
-          .main__picture__box__lists__list__productList--body
-            %h3.name products3
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                30000円
-              %i.fa.fa-star 
-              0
-            %P (税込)
-      .main__picture__box__lists__list
-        =link_to "/items/1" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
-          .main__picture__box__lists__list__productList--body
-            %h3.name products2
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                20000円
-              %i.fa.fa-star 
-              0
-            %P (税込)
-      .main__picture__box__lists__list
-        =link_to "/items/1" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
-          .main__picture__box__lists__list__productList--body
-            %h3.name products1
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                10000円
-              %i.fa.fa-star 
-              0
-            %P (税込)
-      .main__picture__box__lists__list
-        =link_to "/items/1" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png"
-          .main__picture__box__lists__list__productList--body
-            %h3.name products4
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                50000円
-              %i.fa.fa-star 
-              0
-            %P (税込)
-      .main__picture__box__lists__list
-        =link_to "/items/1" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/11/a005.png"
-          .main__picture__box__lists__list__productList--body
-            %h3.name products4
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                40000円
-              %i.fa.fa-star 
-              0
-            %P (税込)
-        -# こちらは今後使用するため今だけコメントアウト
-        
-        -# - @items.each do |item|
-        -#   =link_to "/items/1" do
-        -#     .main__picture__box__lists__list__description--image
-=======
         - @items.each do |item|
-          =link_to "/products/3" do
+          =link_to "/items/1" do
             .main__picture__box__lists__list__description--image
->>>>>>> Stashed changes
-              
               =image_tag "#{Image.find(item.image_id).image.to_s}"
                 -if item.buyer_id.present? 
                 .item__box__picture__sold
@@ -306,15 +231,3 @@
   .purchaseBtn
     %span.purchaseBtn__text 出品する
     =image_tag "icon_camera.png"
-
-              
-              
-             
-              
-              
-      
-
-
-
-
-    
