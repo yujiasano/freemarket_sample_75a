@@ -6,7 +6,7 @@
           =image_tag "logo.png",alt: "ロゴ"
       .header__contents__content__search-box
         %form
-          %input.header__contents__content__search-box__input{:name => "",:placeholder => "キーワード検索", :type =>"", :value => ""}/
+          %input.header__contents__content__search-box__input{:name => "",:placeholder => "キーワードから探す", :type =>"", :value => ""}/
           %button{type: "submit"}
             .header__contents__content__search-box__icon
               =image_tag "icon-search 1.png",alt: "ロゴ"
@@ -19,33 +19,32 @@
               =link_to categories_path, class: "categories" do
                 カテゴリーから探す
               = render partial: 'home/categories_drop'
-
           .header__contents__nav-list__left__brand
-            %li
+            %li.header__contents__nav-list__left__brand__li
               =link_to "#" do
                 ブランド
       .header__contents__nav-list__right
         %ul
           -if user_signed_in?
             .header__contents__nav-list__right__login
-              %li
+              %li.header__contents__nav-list__right__login__li
                 =link_to destroy_user_session_path, method: "DELETE" do
                   ログアウト
             
             .header__contens__nav-list__right__new
-              %li 
+              %li.header__contens__nav-list__right__new__li
                 =link_to user_path(current_user[:id]) do
                   マイページ     
           -else
             .header__contents__nav-list__right__login
-              %li
+              %li.header__contents__nav-list__right__login__li
                 =link_to new_user_session_path do
                   ログイン
               
             .header__contens__nav-list__right__new
-              %li 
+              %li.header__contens__nav-list__right__new__li
                 =link_to home_index_path do
-                  新規登録      
+                  新規登録       
 
 .main
   .main__contents
