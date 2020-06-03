@@ -218,4 +218,20 @@ $(function(){
       }
     }
   });
+
+  
+  //価格表示
+  $('#sell-price').on('input', function(){
+    var data = $('#sell-price').val();
+    var profit = Math.round(data * 0.9)
+    var fee = (data - profit)
+    $('#furima_fee').html(fee)
+    $('#furima_fee').prepend('¥')
+    $('#revenue').html(profit)
+    $('#revenue').prepend('¥')
+    if(profit == '') {
+    $('#revenue').html('');
+    $('#furima_fee').html('');
+    }
+  })
 });
