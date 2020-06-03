@@ -6,7 +6,7 @@
           =image_tag "logo.png",alt: "ロゴ"
       .header__contents__content__search-box
         %form
-          %input.header__contents__content__search-box__input{:name => "",:placeholder => "キーワードから探す", :type =>"", :value => ""}/
+          %input.header__contents__content__search-box__input{:name => "",:placeholder => "キーワード検索", :type =>"", :value => ""}/
           %button{type: "submit"}
             .header__contents__content__search-box__icon
               =image_tag "icon-search 1.png",alt: "ロゴ"
@@ -14,34 +14,34 @@
       .header__contents__nav-list__left
         %ul
           .header__contents__nav-list__left__category
-            %li.header__contents__nav-list__left__category__li
+            %li
               =link_to "#" do
                 カテゴリー
                
           .header__contents__nav-list__left__brand
-            %li.header__contents__nav-list__left__brand__li
+            %li
               =link_to "#" do
                 ブランド
       .header__contents__nav-list__right
         %ul
           -if user_signed_in?
             .header__contents__nav-list__right__login
-              %li.header__contents__nav-list__right__login__li
+              %li
                 =link_to destroy_user_session_path, method: "DELETE" do
                   ログアウト
             
             .header__contens__nav-list__right__new
-              %li.header__contens__nav-list__right__new__li
+              %li 
                 =link_to user_path(current_user[:id]) do
                   マイページ     
           -else
             .header__contents__nav-list__right__login
-              %li.header__contents__nav-list__right__login__li
+              %li
                 =link_to new_user_session_path do
                   ログイン
               
             .header__contens__nav-list__right__new
-              %li.header__contens__nav-list__right__new__li
+              %li 
                 =link_to home_index_path do
                   新規登録      
 
@@ -139,73 +139,24 @@
         %h3 新規投稿商品
     .main__picture__box__lists
       .main__picture__box__lists__list
-        =link_to "/products/3" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
-            .item__box__picture__sold
-              .item__box__picture__sold__inner SOLD OUT
-          .main__picture__box__lists__list__productList--body
-            %h3.name products3
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                30000円
-              %i.fa.fa-star 
-              0
-            %P (税込)
-      .main__picture__box__lists__list
-        =link_to "/products/2" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
-          .main__picture__box__lists__list__productList--body
-            %h3.name products2
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                20000円
-              %i.fa.fa-star 
-              0
-            %P (税込)
-      .main__picture__box__lists__list
-     
-        =link_to "/items/1" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
-          .main__picture__box__lists__list__productList--body
-            %h3.name products1
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                10000円
-              %i.fa.fa-star 
-              0
-            %P (税込)
-      .main__picture__box__lists__list
-        =link_to "/items/1" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png"
-          .main__picture__box__lists__list__productList--body
-            %h3.name products4
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                50000円
-              %i.fa.fa-star 
-              0
-            %P (税込)
-      .main__picture__box__lists__list
-        =link_to "/items/1" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/11/a005.png"
-          .main__picture__box__lists__list__productList--body
-            %h3.name products4
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                40000円
-              %i.fa.fa-star 
-              0
-            %P (税込)          
+        - @items.each do |item|
+          =link_to "/products/1" do
+            .main__picture__box__lists__list__description--image
+              =image_tag "#{Image.find(item.image_id).image.to_s}"
+                -if item.buyer_id.present? 
+                .item__box__picture__sold
+                  .item__box__picture__sold__inner SOLD OUT
+              
+            .main__picture__box__lists__list__productList--body
+              =item.name
+            .main__picture__box__lists__list__productList--details
+              %ul
+                %li 
+                  ="#{item.price}円"
+                  %P (税込)
+                %i.fa.fa-star 
+                  0
+              
 .main__picture
   %h2.main__picture__header ピックアップブランド
   .main__picture__box
@@ -214,6 +165,7 @@
         %h3 アーカイバ
     .main__picture__box__lists
       .main__picture__box__lists__list
+<<<<<<< Updated upstream
         =link_to "/items/1" do
           .main__picture__box__lists__list__description--image
             =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
@@ -285,21 +237,26 @@
         -# - @items.each do |item|
         -#   =link_to "/items/1" do
         -#     .main__picture__box__lists__list__description--image
+=======
+        - @items.each do |item|
+          =link_to "/products/3" do
+            .main__picture__box__lists__list__description--image
+>>>>>>> Stashed changes
               
-        -#       -# =image_tag "#{Image.find(item.image_id).image.to_s}"
-        -#         -if item.buyer_id.present? 
-        -#         .item__box__picture__sold
-        -#           .item__box__picture__sold__inner SOLD OUT
+              =image_tag "#{Image.find(item.image_id).image.to_s}"
+                -if item.buyer_id.present? 
+                .item__box__picture__sold
+                  .item__box__picture__sold__inner SOLD OUT
                
-        -#     .main__picture__box__lists__list__productList--body 
-        -#       =item.name
-        -#     .main__picture__box__lists__list__productList--details
-        -#       %ul
-        -#         %li 
-        -#           ="#{item.price}円"
-        -#           %P (税込)
-        -#         %i.fa.fa-star 
-        -#           0
+            .main__picture__box__lists__list__productList--body 
+              =item.name
+            .main__picture__box__lists__list__productList--details
+              %ul
+                %li 
+                  ="#{item.price}円"
+                  %P (税込)
+                %i.fa.fa-star 
+                  0
 .banner
   .banner__inner
     %h2.banner__inner__title だれでもかんたん、人生を変えるフリマアプリ
@@ -345,8 +302,7 @@
     =link_to "#" do
       =image_tag "logo-white.png"
     %P © FURIMA
-=link_to new_item_path do
-
+=link_to "#" do
   .purchaseBtn
     %span.purchaseBtn__text 出品する
     =image_tag "icon_camera.png"
