@@ -133,31 +133,31 @@
       %h3.main__feature__items__item__title 様々な支払いに対応
       %P.main__feature__items__item__description お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
         
-.main__picture
-  %h2.main__picture__header ピックアップカテゴリー
-  .main__picture__box
-    .main__picture__box__head
-      =link_to "#"do
-        %h3 新規投稿商品
-    .main__picture__box__lists
-      .main__picture__box__lists__list
-        - @items.each do |item|
-          =link_to "/products/1" do
-            .main__picture__box__lists__list__description--image
-              =image_tag "#{Image.find(item.image_id).image.to_s}"
-                -if item.buyer_id.present? 
-                .item__box__picture__sold
-                  .item__box__picture__sold__inner SOLD OUT
+-# .main__picture
+-#   %h2.main__picture__header ピックアップカテゴリー
+-#   .main__picture__box
+-#     .main__picture__box__head
+-#       =link_to "#"do
+-#         %h3 新規投稿商品
+-#     .main__picture__box__lists
+-#       .main__picture__box__lists__list
+-#         - @items.each do |item|
+-#           =link_to "/products/1" do
+-#             .main__picture__box__lists__list__description--image
+-#               =image_tag "#{Image.find(item.image_id).image.to_s}"
+-#                 -if item.buyer_id.present? 
+-#                 .item__box__picture__sold
+-#                   .item__box__picture__sold__inner SOLD OUT
               
-            .main__picture__box__lists__list__productList--body
-              =item.name
-            .main__picture__box__lists__list__productList--details
-              %ul
-                %li 
-                  ="#{item.price}円"
-                  %P (税込)
-                %i.fa.fa-star 
-                  0
+-#             .main__picture__box__lists__list__productList--body
+-#               =item.name
+-#             .main__picture__box__lists__list__productList--details
+-#               %ul
+-#                 %li 
+-#                   ="#{item.price}円"
+-#                   %P (税込)
+-#                 %i.fa.fa-star 
+-#                   0
               
 .main__picture
   %h2.main__picture__header ピックアップブランド
@@ -242,12 +242,12 @@
 
               
             -#  =image_tag "#{Image.find(item.image_id).image.to_s}"
-                -if item.buyer_id.present? 
-                .item__box__picture__sold
-                  .item__box__picture__sold__inner SOLD OUT
+                -# -if item.buyer_id.present? 
+                -# .item__box__picture__sold
+                -#   .item__box__picture__sold__inner SOLD OUT
                
            -# .main__picture__box__lists__list__productList--body 
-              =item.name
+              -# =item.name
             .main__picture__box__lists__list__productList--details
               %ul
                 %li 
