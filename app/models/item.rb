@@ -12,6 +12,9 @@ class Item < ApplicationRecord
   validates :description, presence: true, length: { maximum: 1000 }
   validates :price, numericality: { only_integer: true }
 
+  validates_associated :images
+  validates :images, presence: true
+
   enum status:{
     新品、未使用:"新品、未使用",目立った傷や汚れなし:"目立った傷や汚れなし",目立った傷や汚れあり:"目立った傷や汚れあり",全体的に状態が悪い:"全体的に状態が悪い"
   }
