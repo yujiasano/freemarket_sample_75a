@@ -1,5 +1,12 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:destroy, :show]
+  before_action :move_to_index, only: [:new, :edit, :update]
+
+  before_action :set_item, only: [:destroy, :show,:edit,:update]
+
+ 
+
+
+
 
   def index
     @items = Item.all
@@ -50,12 +57,19 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.images.build()
-
-    @category_parent_array = ["---"]
-    @category_parent_array = Category.where(ancestry: nil)
-
+    @images = @item.images.build
   end
+
+  def create
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to root_path
+    else
+      @item.images.build
+      render action: :new
+    end
+  end
+
 
 
   def get_category_children
@@ -67,34 +81,23 @@ class ItemsController < ApplicationController
   end
 
   
-  def create
-    @item = Item.new(item_params)
-    
-    respond_to do |format|
-      # 商品の詳細が保存された場合
-      if @item.save
-        params[:item_images][:image].each do |image|
-          @item.images.create(image: image, item_id: @item.id)
-        end
-        format.html{redirect_to root_path}
-      else
-        # 商品の詳細が保存されなかった場合
-        @item.images.build
-        format.html{render action: 'new'}
-      end
-    end
-  end
   
   
   
   
   
   def edit
-  
   end
   
   
-  
+  def update
+    if @item.update(item_update_params)
+      redirect_to root_path
+    else
+      render action: :edit
+    end
+  end
+
   
   
   
@@ -127,12 +130,20 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :price, :description, :status, :size, :trading_status, :delivery_area, :delivery_days, :delivery_burden, :brand_id, :category_id, :user_id, images_attributes: [:image])
+
   end
+
   
-
   def set_item
-    @item = Item.find(params[:id])
+    @item = Item.includes(:images).find(params[:id])
   end
 
+  def item_update_params
+    params.require(:item).permit(:name, :price, :description, :status, :size, :trading_status, :delivery_area, :delivery_days, :delivery_burden, :brand_id, :category_id, :user_id, [images_attributes: [:image, :_destroy, :id]])
+  end
+
+  def move_to_index
+    redirect_to new_user_session_path unless user_signed_in?
+  end
 end
 
