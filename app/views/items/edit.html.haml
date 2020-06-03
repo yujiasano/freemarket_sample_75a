@@ -37,6 +37,7 @@
                         %span 削除
               .label-content
                 = f.label :"images_attributes_#{@item.images.length}_image", class: "label-box", id: "label-box--#{@item.images.length}" do
+                  = icon('fas', 'camera', class: 'label-content__icon')
                   %pre.label-box__text-visible クリックしてファイルをアップロード
               .hidden-content
                 = f.fields_for :images do |i|

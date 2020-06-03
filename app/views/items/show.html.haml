@@ -23,14 +23,26 @@
                 ブランド
       .header-detail__contents__nav-list__right
         %ul
-          .header-detail__contents__nav-list__right__login
-            %li
-              =link_to "#" do
-                ログイン
-          .header-detail__contents__nav-list__right__new
-            %li
-              =link_to "#" do
-                新規登録
+          -if user_signed_in?
+            .header-detail__contents__nav-list__right__login
+              %li
+                =link_to destroy_user_session_path, method: "DELETE" do
+                  ログアウト
+            
+            .header-detail__contents__nav-list__right__new
+              %li 
+                =link_to user_path(current_user[:id]) do
+                  マイページ     
+          -else
+            .header-detail__contents__nav-list__right__login
+              %li
+                =link_to new_user_session_path do
+                  ログイン
+              
+            .header-detail__contents__nav-list__right__new
+              %li 
+                =link_to home_index_path do
+                  新規登録      
 %nav.nav-detail
   %ul.nav-detail__ul
     .nav-detail__ul__li
@@ -129,7 +141,8 @@
                 %th カテゴリー
                 %td 
                   =link_to "#" do
-                    = @item.category.parent.parent.name
+                    - if @item.category.parent.parent.name.present?
+                      = @item.category.parent.parent.name
                   %br
                   =link_to "#" do
                     = @item.category.parent.name
