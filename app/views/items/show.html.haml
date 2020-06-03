@@ -141,7 +141,8 @@
                 %th カテゴリー
                 %td 
                   =link_to "#" do
-                    = @item.category.parent.parent.name
+                    - if @item.category.parent.parent.name.present?
+                      = @item.category.parent.parent.name
                   %br
                   =link_to "#" do
                     = @item.category.parent.name
