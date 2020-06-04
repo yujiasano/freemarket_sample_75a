@@ -50,6 +50,8 @@ $(document).ready(function(){
           appendChidrenBox(insertHTML);
         })
         .fail(function(){
+          $('#children_wrapper').remove();
+          $('#grandchildren_wrapper').remove(); 
           alert('カテゴリーを選択してください');
         })
       }else{
@@ -78,6 +80,7 @@ $(document).ready(function(){
           }
         })
         .fail(function(){
+          $('#grandchildren_wrapper').remove(); 
           alert('カテゴリーを選択してください');
         })
       }else{
