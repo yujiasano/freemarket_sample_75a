@@ -58,9 +58,9 @@
         %span.content-sale__main__box__form__inner__title__span
           必須
       .content-sale__main__box__form__inner__intro
-        = f.text_area :description, class: "items-new-form-area__default", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "7"
+        = f.text_area :description, class: "items-new-form-area__default", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "7", id: "input-text"
         .content-sale__main__box__form__inner__intro__bottom
-          %span 0/1000
+          %p{id: "counter"}
 
   %hr.content-sale--hr
   .content-sale__main__box__form
