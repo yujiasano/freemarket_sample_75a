@@ -17,8 +17,8 @@ class CommentsController < ApplicationController
 
   # 仮削除用の記述
   def update
-    if @comment.update(delete_check:1)
-    else
+    @comment.update(delete_check:1)
+    unless @comment.update(delete_check:1)
       flash[:alert] = "削除できていません"
       redirect_to item_path(params[:id])
     end
@@ -39,8 +39,8 @@ class CommentsController < ApplicationController
 
   # コメントを完全に削除する記述
   def destroy
-    if @comment.destroy
-    else
+    @comment.destroy
+    unless @comment.destroy
       flash[:alert] = "完全に削除できていません"
       redirect_to item_path(params[:id])
     end
