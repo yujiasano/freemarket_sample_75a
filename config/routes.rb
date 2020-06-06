@@ -44,4 +44,11 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
+  resources :comments, only:[:create,:update,:destroy] do
+    member do
+      get 'restore'
+    end
+  end
+  
+
 end

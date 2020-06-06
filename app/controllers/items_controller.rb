@@ -8,14 +8,7 @@ class ItemsController < ApplicationController
 
 
   def index
-  
     @items = Item.all
-
-    
-    
-
-   
-
   end
 
   
@@ -131,6 +124,9 @@ class ItemsController < ApplicationController
 
   def show
     @category = @item.category
+
+    @comment = Comment.new
+    @commentALL = @item.comments
   end
 
   private

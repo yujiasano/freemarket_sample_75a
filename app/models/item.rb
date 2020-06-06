@@ -5,6 +5,7 @@ class Item < ApplicationRecord
   belongs_to :brand, optional: true
   belongs_to :category, optional: true
   accepts_nested_attributes_for :images, allow_destroy: true
+  has_many :comments, dependent: :destroy
 
   validates :status, :trading_status, :delivery_area, :delivery_days, :delivery_burden, :category_id, presence: true
 
