@@ -17,21 +17,33 @@ class CommentsController < ApplicationController
 
   # 仮削除用の記述
   def update
-    @comment.update(delete_check:1)
+    if @comment.update(delete_check:1)
+    else
+      flash[:alert] = "削除できていません"
+      redirect_to item_path(params[:id])
+    end
   end
 
   # 仮削除復元の記述
   def restore
-    @comment.update(delete_check:0)
     @seller_of_item = @comment.item.user_id
+    if @comment.update(delete_check:0)
     respond_to do |format|
       format.json
+    end
+    else
+      flash[:alert] = "更新できていません"
+      redirect_to item_path(params[:id])
     end
   end
 
   # コメントを完全に削除する記述
   def destroy
-    @comment.destroy
+    if @comment.destroy
+    else
+      flash[:alert] = "完全に削除できていません"
+      redirect_to item_path(params[:id])
+    end
   end
 
 
