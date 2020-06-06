@@ -82,10 +82,18 @@
                     必須
                 .item-detail__inner__box
                   .item-detail__inner__box__select
-                    = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
-                    .exhibitionPage__main__contents__detail__category__choose
-                    -# ↓元々書いてあったコードをコメントアウトしました。確認取れ次第削除する
-                    -# = f.collection_select :category_id, Category.all.limit(13), :id, :name,{prompt:"---"},{class:"", id: ""}
+                    
+                    = f.collection_select :category_id, Category.roots, :id, :name ,{prompt: "選択してください", selected:  @item.category.parent.parent_id}, {class: 'listing-select-wrapper--edit__parent--select', id: 'parent_category_edit', name: "" }
+                    .exhibitionPage__main__contents__detail__category__choose9
+                .item-detail__inner__edit
+                  .item-detail__inner__edit__select
+                    = f.collection_select :category_id, @item.category.parent.parent.children, :id, :name ,{prompt: "選択してください", selected: @item.category.parent_id}, {class: 'exhibitionPage__main__contents__detail__category__choose--select', id: 'child_category_edit', name: "" }
+                    .exhibitionPage__main__contents__detail__category__choose2
+                .item-detail__inner__edit
+                  .item-detail__inner__edit__select
+                    = f.collection_select :category_id,@item.category.parent.children, :id, :name ,{prompt: "選択してください", selected: @item.category.id}, {class: 'listing-select-wrapper--edit__grandchild--select', id: 'grandchild_category_edit', name: "product[category_id]" }
+               
+                    
             .item-detail
               .item-detail__inner
                 .item-detail__inner__name
