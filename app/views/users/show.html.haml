@@ -29,8 +29,8 @@
           =link_to "#" do
             やることリスト
         %li.header__contents__nav-list__right-list__mypage
-          =link_to "#" do
-            マイページ
+          =link_to destroy_user_session_path, method: "DELETE" do
+            ログアウト
 
         
 

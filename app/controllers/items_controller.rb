@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, only: [:new, :edit, :update]
-
   before_action :set_item, only: [:destroy, :show,:edit,:update]
 
  
@@ -94,6 +93,7 @@ class ItemsController < ApplicationController
   
   def edit
   end
+
   
   
   def update
@@ -130,6 +130,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @category = @item.category
   end
 
   private
