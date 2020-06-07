@@ -3,17 +3,18 @@
     - if current_user.favorites.find_by(item_id: item.id)
       = link_to unfavorite_item_path(@item.id, @item.id), method: :delete, remote: true, class: "option__favorite-on" do
         .fas.fa-star
-        .option__favorite-on__text お気に入り！
+        .option__favorite-on__text お気に入り  
         .option__favorite-on__count
           =item.favorites.count
     - else
       = link_to  favorite_item_path(@item.id, @item.id), method: :post, remote: true, class: "option__favorite-off" do
-        .fas.fa-star
-        .option__favorite-off__text お気に入り！
+        .far.fa-star
+        .option__favorite-off__text お気に入り  
         .option__favorite-off__count
           =item.favorites.count
   - else
-    = icon('fas', 'star', class: 'icon')
-    お気に入り！
-    %span
-    = item.favorites.count
+    = link_to  new_user_session_path, class: "option__favorite-off" do
+      = icon('fas', 'star', class: 'icon')
+      お気に入り
+      %span
+      = item.favorites.count
