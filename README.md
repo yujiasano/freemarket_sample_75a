@@ -8,6 +8,7 @@
 
 ### Association
 - has_many :items
+- has_many :comments
 - has_one :profile
 - has_one :creditcard
 
@@ -70,6 +71,7 @@
 - belongs_to :user
 - belongs_to :categoty
 - belongs_to :brand
+- has_many :comments
 
 
 ## imagesテーブル
@@ -98,3 +100,15 @@
 
 ### Association
 - has_many :items
+
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|comment|string||
+|delete_check|integer|default: 0|
+|item|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+
+### Association
+- belings_to :user
+- belings_to :iten
