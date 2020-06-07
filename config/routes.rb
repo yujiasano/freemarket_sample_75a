@@ -14,7 +14,12 @@ Rails.application.routes.draw do
   root 'items#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :home, only: [:index, :new, :edit]
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    collection do
+      get :favorites
+    end
+  end
+  
   resources :items do
     resources :purchase, only: [:index] do
       collection do
@@ -26,6 +31,10 @@ Rails.application.routes.draw do
     collection do
       get 'category/get_category_children', to: 'items#get_category_children', defaults: { format: 'json' }
        get 'category/get_category_grandchildren', to: 'items#get_category_grandchildren', defaults: { format: 'json' }
+    end
+    member do
+      post   '/favorite/:item_id' => 'favorites#favorite',   as: 'favorite'
+      delete '/favorite/:item_id' => 'favorites#unfavorite', as: 'unfavorite'
     end
   end
   resources :categories, only: [:index] do
@@ -49,6 +58,6 @@ Rails.application.routes.draw do
       get 'restore'
     end
   end
-  
+
 
 end

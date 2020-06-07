@@ -6,6 +6,8 @@ class Item < ApplicationRecord
   belongs_to :category, optional: true
   accepts_nested_attributes_for :images, allow_destroy: true
   has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+
 
   validates :status, :trading_status, :delivery_area, :delivery_days, :delivery_burden, :category_id, presence: true
 
@@ -27,5 +29,9 @@ class Item < ApplicationRecord
   enum delivery_days:{
     "1~2日で発送":"1~2日で発送","2~3日で発送":"2~3日で発送", "4~7日で発送":"4~7日で発送"
   }
+
+  def favorite_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
 
 end

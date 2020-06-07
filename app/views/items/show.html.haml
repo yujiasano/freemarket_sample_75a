@@ -170,12 +170,11 @@
                   =@item.delivery_days
         .contents-main__main__box__item__otherbtn
           %ul
-            %li.contents-main__main__box__item__otherbtn__fav
-              = icon('fas', 'star', class: 'icon')
-              お気に入り 20
+            %li.option
+              = render partial: 'favorites/favorite', locals: { item: @item }
           %ul
-            %li
-              =link_to "#" do
+            %li.flag-li
+              =link_to "#", class: "contents-main__main__box__item__otherbtn__flag" do
                 = icon('fas', 'flag', class: 'icon')
                 不適切な商品通報
       - if user_signed_in?
