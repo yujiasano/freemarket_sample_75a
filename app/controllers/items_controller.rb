@@ -2,56 +2,9 @@ class ItemsController < ApplicationController
   before_action :move_to_index, only: [:new, :edit, :update]
   before_action :set_item, only: [:destroy, :show,:edit,:update]
 
- 
-
-
-
-
   def index
     @items = Item.all
-  end
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+  end 
 
   def new
     @item = Item.new
@@ -68,8 +21,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
-
   def get_category_children
     @category_children = Category.find(params[:parent_id]).children
   end
@@ -77,18 +28,10 @@ class ItemsController < ApplicationController
   def get_category_grandchildren
     @category_grandchildren = Category.find(params[:child_id]).children
   end
-
-  
-  
-  
-  
-  
   
   def edit
   end
 
-  
-  
   def update
     if @item.update(item_update_params)
       redirect_to root_path
@@ -96,24 +39,7 @@ class ItemsController < ApplicationController
       render action: :edit
     end
   end
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+ 
   def destroy
     if @item.destroy
         redirect_to root_path
