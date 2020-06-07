@@ -129,6 +129,14 @@ class ItemsController < ApplicationController
     @commentALL = @item.comments
   end
 
+
+  def favorites
+    @items = current_user.favorite_items.includes(:user).recent
+  end
+
+
+
+
   private
 
   def item_params

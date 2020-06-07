@@ -27,6 +27,10 @@ Rails.application.routes.draw do
       get 'category/get_category_children', to: 'items#get_category_children', defaults: { format: 'json' }
        get 'category/get_category_grandchildren', to: 'items#get_category_grandchildren', defaults: { format: 'json' }
     end
+    member do
+      post   '/favorite/:item_id' => 'favorites#favorite',   as: 'favorite'
+      delete '/favorite/:item_id' => 'favorites#unfavorite', as: 'unfavorite'
+    end
   end
   resources :categories, only: [:index] do
     member do
@@ -49,6 +53,6 @@ Rails.application.routes.draw do
       get 'restore'
     end
   end
-  
+
 
 end
