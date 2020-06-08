@@ -153,16 +153,7 @@ a{
 }
 .main__descriptions{
   padding: 60px 20px;
-  &__line{
-    content: "";
-    width: 70px;
-    height: 4px;
-    background-color: #3CCACE;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom:18px;
-  }
+  
 
   &__title{
     font-size: 26px;
@@ -172,8 +163,20 @@ a{
     padding-bottom: 15px;
     position: relative;
     text-align: center;
-    
   }
+    &__title::after{
+      content: "";
+      width: 70px;
+      height: 4px;
+      background-color: #3CCACE;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom:5px;
+    }
+    
+  
   &__lists{
     text-align: center;
     display: flex;
@@ -204,6 +207,8 @@ a{
         padding: 10px 20px;
         background-color: #3CCACE;
         color: #fff;
+        width: 30%;
+        
       }
         img{
           width: 100%;
@@ -368,7 +373,7 @@ background-color: #fff;
       
     
       &__list{
-        display: inline-block;
+        display: flex;
 
         a{
           display: inline-block;
@@ -433,34 +438,42 @@ background-color: #fff;
             padding-bottom:15px;
           }
         }
+          
+          }
+        }
+
       }
     }
-  }     
-}  
-
-.item__box__picture__sold{
-  width: 0;
-  height: 0;
-  border-width: 120px 120px 0 0;
-  border-color: #ea352d transparent; 
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  border-style: solid;
-  &__inner{
-    top: -110px;
-    font-size: 25px;
-    position: absolute;
-    left: 3px;
-    z-index: 2;
-    color: #fff;
-    transform: rotate(-45deg);
-    letter-spacing: 2px;
-    font-weight: 600;
-  }
-}
+     
+    .top-main__contents__item-box__image{
+      position: relative;
+      margin:10px;
+      background-color: white;
+    }
+      .item__box__picture__sold{
+       width: 0;
+       height: 0;
+       border-width: 120px 120px 0 0;
+       border-color: #ea352d transparent; 
+       display: block;
+       position: absolute;
+       top: 0;
+       left: 0;
+       z-index: 1;
+       border-style: solid;
+       &__inner{
+         top: -110px;
+         font-size: 25px;
+         position: absolute;
+         left: 3px;
+         z-index: 2;
+         color: #fff;
+         transform: rotate(-45deg);
+         letter-spacing: 2px;
+         font-weight: 600;
+       }
+      }
+    
 
 .banner{
   background-image: image-url('bg-appBanner-pict.jpg');
@@ -500,7 +513,6 @@ background-color: #fff;
     }
   }
 }
-          
 .footer{
   padding: 60px 0;
   color: #fff;
@@ -545,6 +557,18 @@ background-color: #fff;
     P{
     font-size: 13px;
     }
+    
+  }
+  &__logo::after{
+    content: "";
+    width: 70px;
+    height: 4px;
+    background-color: #3CCACE;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom:45px;
   }
 }
 .purchaseBtn{
@@ -570,5 +594,8 @@ background-color: #fff;
   }
 }
 
-
-  
+.top-main__contents__item-box__image{
+  background: white;
+  margin: 10px;
+}
+      

@@ -136,248 +136,61 @@
       %h3.main__feature__items__item__title 様々な支払いに対応
       %P.main__feature__items__item__description お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
         
+
 .main__picture
   %h2.main__picture__header ピックアップカテゴリー
   .main__picture__box
     .main__picture__box__head
-      =link_to "#"do
+      =link_to "#" do
         %h3 新規投稿商品
     .main__picture__box__lists
       .main__picture__box__lists__list
-
-        =link_to "/products/3" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
-            .item__box__picture__sold
-              .item__box__picture__sold__inner SOLD OUT
-          .main__picture__box__lists__list__productList--body
-            %h3.name products3
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                30000円
-              %i.fa.fa-star 
-              0
-            %P (税込)
-      .main__picture__box__lists__list
-        =link_to "/products/2" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
-          .main__picture__box__lists__list__productList--body
-            %h3.name products2
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                20000円
-              %i.fa.fa-star 
-              0
-            %P (税込)
-      .main__picture__box__lists__list
-     
-        =link_to "/items/1" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
-          .main__picture__box__lists__list__productList--body
-            %h3.name products1
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                10000円
-              %i.fa.fa-star 
-              0
-            %P (税込)
-      .main__picture__box__lists__list
-        =link_to "/items/1" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png"
-          .main__picture__box__lists__list__productList--body
-            %h3.name products4
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                50000円
-              %i.fa.fa-star 
-              0
-            %P (税込)
-      .main__picture__box__lists__list
-        =link_to "/items/1" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/11/a005.png"
-          .main__picture__box__lists__list__productList--body
-            %h3.name products4
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                40000円
-              %i.fa.fa-star 
-              0
-            %P (税込)          
         - @items.each do |item|
-          =link_to "/items/1" do
-            .main__picture__box__lists__list__description--image
-              =image_tag "#{Image.find(item.image_id).image.to_s}"
-                - if item.buyer_id.present? 
-                .item__box__picture__sold
-                  .item__box__picture__sold__inner SOLD OUT 
-            .main__picture__box__lists__list__productList--body 
-              =item.name
+          .top-main__contents__item-box__image
+            - item.images.each_with_index do |image, index|
+              - if index == 0
+                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), item_path(item.id), class: "top-main__contents__item-box__image__img"
+                  -if item.buyer_id.present? 
+                  .item__box__picture__sold
+                    .item__box__picture__sold__inner SOLD OUT
+                - break
+            .main__picture__box__lists__list__productList--body
+              %h3.name
+                = item.name
             .main__picture__box__lists__list__productList--details
               %ul
-                %li 
-                  ="#{item.price}円"
-                  %P (税込)
-                %i.fa.fa-star 
-                  0          
-
--# .main__picture
--#   %h2.main__picture__header ピックアップカテゴリー
--#   .main__picture__box
--#     .main__picture__box__head
--#       =link_to "#"do
--#         %h3 新規投稿商品
--#     .main__picture__box__lists
--#       .main__picture__box__lists__list
--#         - @items.each do |item|
--#           =link_to "/products/1" do
--#             .main__picture__box__lists__list__description--image
--#               =image_tag "#{Image.find(item.image_id).image.to_s}"
--#                 -if item.buyer_id.present? 
--#                 .item__box__picture__sold
--#                   .item__box__picture__sold__inner SOLD OUT
-              
--#             .main__picture__box__lists__list__productList--body
--#               =item.name
--#             .main__picture__box__lists__list__productList--details
--#               %ul
--#                 %li 
--#                   ="#{item.price}円"
--#                   %P (税込)
--#                 %i.fa.fa-star 
--#                   0
-              
+                %li
+                  = item.price
+                %i.fa.fa-star
+                0
+              %P (税込)
 .main__picture
-  %h2.main__picture__header ピックアップブランド
+  %h2.main__picture__header ピックアップカテゴリー
   .main__picture__box
     .main__picture__box__head
-      =link_to "#"do
-        %h3 アーカイバ
+      =link_to "#" do
+        %h3 レディース
     .main__picture__box__lists
-
       .main__picture__box__lists__list
-
-        - @items.each do |item|
-
-        =link_to "/items/1" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
-            .item__box__picture__sold
-              .item__box__picture__sold__inner SOLD OUT
-          .main__picture__box__lists__list__productList--body
-            %h3.name products3
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                30000円
-              %i.fa.fa-star 
-              0
-            %P (税込)
-      .main__picture__box__lists__list
-        =link_to "/items/1" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
-          .main__picture__box__lists__list__productList--body
-            %h3.name products2
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                20000円
-              %i.fa.fa-star 
-              0
-            %P (税込)
-      .main__picture__box__lists__list
-        =link_to "/items/1" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
-          .main__picture__box__lists__list__productList--body
-            %h3.name products1
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                10000円
-              %i.fa.fa-star 
-              0
-            %P (税込)
-      .main__picture__box__lists__list
-        =link_to "/items/1" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png"
-          .main__picture__box__lists__list__productList--body
-            %h3.name products4
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                50000円
-              %i.fa.fa-star 
-              0
-            %P (税込)
-      .main__picture__box__lists__list
-        =link_to "/items/1" do
-          .main__picture__box__lists__list__description--image
-            =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/11/a005.png"
-          .main__picture__box__lists__list__productList--body
-            %h3.name products4
-          .main__picture__box__lists__list__productList--details
-            %ul
-              %li 
-                40000円
-              %i.fa.fa-star 
-              0
-            %P (税込)
-        -# こちらは今後使用するため今だけコメントアウト
-        
-        -# - @items.each do |item|
-        -#   =link_to "/items/1" do
-        -#     .main__picture__box__lists__list__description--image
-
-
-              
-            -#  =image_tag "#{Image.find(item.image_id).image.to_s}"
-                -# -if item.buyer_id.present? 
-                -# .item__box__picture__sold
-                -#   .item__box__picture__sold__inner SOLD OUT
-               
-        -#     .main__picture__box__lists__list__productList--body 
-        -#       =item.name
-        -#     .main__picture__box__lists__list__productList--details
-        -#       %ul
-        -#         %li 
-        -#           ="#{item.price}円"
-        -#           %P (税込)
-        -#         %i.fa.fa-star 
-        -#           0
-
-      .main__picture__box__lists__list 
-        -@items.each do |item|
-
-          =link_to "/items/1" do
-            .main__picture__box__lists__list__description--image
-              =image_tag "#{Image.find(item.image_id).image.to_s}"
-                -if item.buyer_id.present? 
-                .item__box__picture__sold
-                  .item__box__picture__sold__inner SOLD OUT
+        - @ladies.each do |item|
+          .top-main__contents__item-box__image
+            - item.images.each_with_index do |image, index|
+              - if index == 0
+                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), item_path(item.id), class: "top-main__contents__item-box__image__img"
+                  -if item.buyer_id.present? 
+                  .item__box__picture__sold
+                    .item__box__picture__sold__inner SOLD OUT
+                - break
             .main__picture__box__lists__list__productList--body
-              =item.nam
-           -# .main__picture__box__lists__list__productList--body 
-              -# =item.name
+              %h3.name
+                = item.name
             .main__picture__box__lists__list__productList--details
               %ul
-                %li 
-                  ="#{item.price}円"
-                  %P (税込)
-                %i.fa.fa-star 
-
-
-                  0
+                %li
+                  = item.price
+                %i.fa.fa-star
+                0
+              %P (税込)
 .banner
   .banner__inner
     %h2.banner__inner__title だれでもかんたん、人生を変えるフリマアプリ
