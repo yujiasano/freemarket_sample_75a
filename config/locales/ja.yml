@@ -218,4 +218,5 @@ ja:
         delivery_area: "発送元の地域"
         delivery_days: "発送までの日数"
         delivery_burden: "配送料の負担"
-        category_id: "カテゴリー"
+        category_id: "カテゴリー" 
+        images: "画像"

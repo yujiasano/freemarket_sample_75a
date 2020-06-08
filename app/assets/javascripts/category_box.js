@@ -28,6 +28,7 @@ $(document).ready(function(){
                                 </div>
                               </div>`;
       $('.exhibitionPage__main__contents__detail__category__choose').append(grandchildSelectHtml);
+      $('.exhibitionPage__main__contents__detail__category__choose9').append(grandchildSelectHtml);
     }
 
     $('#parent_category').on('change', function(){
@@ -40,7 +41,7 @@ $(document).ready(function(){
           data: { parent_id: parent_category_id },
           dataType: 'json'
         })
-        .done(function(children){
+        .done(function(children){         
           $('#children_wrapper').remove(); 
           $('#grandchildren_wrapper').remove();
           var insertHTML = '';
@@ -50,6 +51,8 @@ $(document).ready(function(){
           appendChidrenBox(insertHTML);
         })
         .fail(function(){
+          $('#children_wrapper').remove();
+          $('#grandchildren_wrapper').remove(); 
           alert('カテゴリーを選択してください');
         })
       }else{
@@ -78,6 +81,7 @@ $(document).ready(function(){
           }
         })
         .fail(function(){
+          $('#grandchildren_wrapper').remove(); 
           alert('カテゴリーを選択してください');
         })
       }else{

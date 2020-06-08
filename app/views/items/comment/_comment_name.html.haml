@@ -1,0 +1,6 @@
+.comment_user_name
+  = comment.user.nickname
+  - if comment.user_id ==  comment.item.user_id
+    .seller_display
+      = icon('fas', 'user', class: 'icon')
+      出品者

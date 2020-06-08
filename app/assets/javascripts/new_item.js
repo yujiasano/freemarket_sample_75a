@@ -141,6 +141,8 @@ $(function(){
       $('.label-content').css('width', '234px');
     } else if (count == 9) {
       $('.label-content').css('width', '106px');
+    } else if (count == 0) {
+      $('.label-content').css('width', '620px');
     } else if (count == 10) { 
       $('.label-content').hide();
     }
@@ -174,6 +176,8 @@ $(function(){
         $('.label-content').css('width', '234px');
       } else if (count == 9) {
         $('.label-content').css('width', '106px');
+      } else if (count == 0) {
+        $('.label-content').css('width', '620pxpx');
       } else if (count == 10) { 
         $('.label-content').hide();
       }
@@ -233,4 +237,10 @@ $(function(){
     $('#furima_fee').html('');
     }
   })
+
+  // 商品説明の文字カウント
+  $("#input-text").on("keyup", function() {
+    let countNum = String($(this).val().length);
+    $("#counter").text(countNum + "/1000");
+  });
 });

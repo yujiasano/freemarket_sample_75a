@@ -1,0 +1,10 @@
+出品者によりこのコメントは削除されました。
+- if comment.item.user_id == current_user.id
+  .comment-restore{data:{index: comment.id}} 
+    = link_to restore_comment_path(comment.id) do
+      = icon('fas', 'undo', class: 'icon')
+      復元する
+  .comment_delete.complete_delete{data:{index: comment.id}}     
+    = link_to comment_path(comment.id) ,method: :delete,class: "complete-delete" do
+      = icon('far', 'trash-alt', class: 'icon')
+      完全に削除する

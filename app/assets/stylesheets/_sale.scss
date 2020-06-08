@@ -261,6 +261,47 @@ body {
         }
       }
     }
+    &__edit {
+      margin-top: 16px;
+      align-items: center;
+      display: inline-flex;
+      width: 100%;
+      &__select{
+        display: inline-block;
+        position: relative;
+        width: inherit;
+        select{
+          border-color: #ff0211;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          color: #222;
+          font-size: 16px;
+          height: 48px;
+          line-height: 1;
+          margin: 0;
+          outline: none;
+          padding: 0 56px 0 16px;
+          width: 100%;
+        }
+        #children_wrapper {  //浅野追記
+              padding-top: 10px;
+            }
+        #grandchildren_wrapper { //浅野追記
+          padding-top: 10px;
+        }   
+        i{
+          bottom: 0;
+          margin: auto;
+          pointer-events: none;
+          position: absolute;
+          right: 16px;
+          top: 0;
+        }
+      }
+
+    }
     &__brand{
       margin-top: 16px;
       align-items: center;
