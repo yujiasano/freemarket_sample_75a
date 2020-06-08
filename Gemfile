@@ -88,6 +88,3 @@ gem 'rails-i18n', '~> 5.1'
 gem 'fog-aws'
 gem 'payjp'
 gem 'ancestry'
-gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
-gem "omniauth-rails_csrf_protection"

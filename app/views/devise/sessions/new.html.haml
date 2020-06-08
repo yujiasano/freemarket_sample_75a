@@ -12,11 +12,11 @@
         %p アカウントをお持ちでない方はこちら
         = link_to "新規会員登録", new_user_registration_path, class: "sign_up_btn"
       .login_form_inner
-        = link_to user_facebook_omniauth_authorize_path, method: :post, class: "facebook_btn" do
+        = link_to "#", class: "facebook_btn" do
           = icon('fab', 'facebook-square',  class: "facebook_btn__icon")
           %span<>
             Facebookでログイン
-        = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "google_btn" do
+        = link_to "#", class: "google_btn" do
           = icon('fab', 'google',  class: "google_btn__icon")
           %span<>
             Googleでログイン
