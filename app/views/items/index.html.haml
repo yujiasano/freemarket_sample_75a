@@ -191,6 +191,33 @@
                 %i.fa.fa-star
                 0
               %P (税込)
+.main__picture
+  %h2.main__picture__header ピックアップカテゴリー
+  .main__picture__box
+    .main__picture__box__head
+      =link_to "#" do
+        %h3 その他
+    .main__picture__box__lists
+      .main__picture__box__lists__list
+        - @kids.each do |item|
+          .top-main__contents__item-box__image
+            - item.images.each_with_index do |image, index|
+              - if index == 0
+                = link_to image_tag("#{image.image.url}", width: '213', height: '213', alt: "アイテム個別画像"), item_path(item.id), class: "top-main__contents__item-box__image__img"
+                  -if item.buyer_id.present? 
+                  .item__box__picture__sold
+                    .item__box__picture__sold__inner SOLD OUT
+                - break
+            .main__picture__box__lists__list__productList--body
+              %h3.name
+                = item.name
+            .main__picture__box__lists__list__productList--details
+              %ul
+                %li
+                  = item.price
+                %i.fa.fa-star
+                0
+              %P (税込)
 .banner
   .banner__inner
     %h2.banner__inner__title だれでもかんたん、人生を変えるフリマアプリ

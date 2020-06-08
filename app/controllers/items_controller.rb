@@ -7,10 +7,7 @@ class ItemsController < ApplicationController
     @items = Item.where(status: 0).includes(:images).order('id DESC').limit(4)
     @ladies = Item.where(category_id: 1..199, status: 0).order('id DESC').limit(4)
     @mens = Item.where(category_id: 200..345, status: 0).order('id DESC').limit(4)
-    @kids = Item.where(category_id: 346..480, status: 0).order('id DESC').limit(4)
-    @home = Item.where(category_id: 481..625, status: 0).order('id DESC').limit(4)
-    @beauty = Item.where(category_id: 869..956, status: 0).order('id DESC').limit(4)
-    
+    @kids = Item.where(category_id: 346..1033, status: 0).order('id DESC').limit(4)
   end
 
   def new
