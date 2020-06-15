@@ -2,6 +2,11 @@
 　TECH CAMPでチームで開発したフリーマーケットアプリです。
  
 # DEMO
+ ![](https://i.gyazo.com/0069cd693aedcc7e590be1ef20ca1679.jpg)
+ 
+
+# features
+
 
 ## usersテーブル
 |Column|Type|Options|
