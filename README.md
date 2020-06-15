@@ -2,7 +2,7 @@
 　TECH CAMPでチームで開発したフリーマーケットアプリです。
  
 # DEMO
- [![Image from Gyazo](https://i.gyazo.com/6163efc6071fb4a7a9aa4950abbe782b.gif)](https://gyazo.com/6163efc6071fb4a7a9aa4950abbe782b)
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
