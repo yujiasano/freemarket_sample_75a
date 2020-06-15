@@ -2,7 +2,7 @@
 　TECH CAMPでチームで開発したフリーマーケットアプリです。
  
 # DEMO
- ![](https://i.gyazo.com/0069cd693aedcc7e590be1ef20ca1679.jpg)
+ ![](https://github.com/yujiasano/freemarket_sample_75a/blob/master/6163efc6071fb4a7a9aa4950abbe782b.gif)
  
 
 # features
