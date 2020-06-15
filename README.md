@@ -1,4 +1,5 @@
-# freemarket_sample_75a
+# フリーマーケットアプリ
+　TECH::CAMP受講中に４人チームで開発しました。
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
