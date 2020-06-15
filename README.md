@@ -5,7 +5,22 @@
  ![](https://github.com/yujiasano/freemarket_sample_75a/blob/master/6163efc6071fb4a7a9aa4950abbe782b.gif)
  
 
+# App URL
+
+ http://18.181.47.13/  
+ Basic認証をかけています。ご覧の際は以下のIDとPassを入力してください。    
+  ID: mercari  
+  Pass: nagoya75
+  
 # features
+- ウィザード形式でのユーザー登録機能/ログイン機能
+- SNS認証による新規登録、ログイン機能（ローカル環境のみ）
+- 商品の出品、編集、削除機能
+- 商品の購入機能（pay.jp）
+- カテゴリー機能
+
+# ER図
+![](https://i.gyazo.com/857a88c2097115a437d3c7317f4139a1.png)
 
 
 ## usersテーブル
